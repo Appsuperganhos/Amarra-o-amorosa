@@ -26,6 +26,22 @@ body {
     max-width: 600px; 
 }
 
+.progress-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: red; /* Cor da barra de progresso */
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+
 h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -40,10 +56,11 @@ p {
     margin-top: 20px;
 }
 
-.options, .age-options {
+.options, .age-options .row {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .option {
