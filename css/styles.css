@@ -31,6 +31,11 @@ h1 {
     margin-bottom: 10px;
 }
 
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
 p {
     font-size: 1em;
     margin-bottom: 20px;
@@ -166,4 +171,22 @@ p {
     background-color: red;
     width: 0%; /* Inicialmente 0% */
     transition: width 0.3s; /* Transição suave */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li .emoji {
+    margin-left: 10px;
 }
