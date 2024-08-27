@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarração Amorosa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Logo no topo -->
+    <img src="images/logo.png" alt="Logo" class="logo">
+
+    <!-- Barra de progresso (inicialmente oculta) -->
+    <div class="progress-bar-container" id="progress-bar-container" style="display: none;">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Primeira seção: Seleção de gênero -->
+    <div class="container" id="gender-selection">
+        <h1>Pronta para descobrir o segredo para reconquistar seu amor?</h1>
+        <p>Conheça o método da Amarração Amorosa e traga o seu amor de volta em 3 dias</p>
+        <div class="gender-selection">
+            <strong>Selecione seu gênero abaixo:</strong>
+            <div class="options">
+                <div class="option" id="male">
+                    <img src="images/masculino.jpg" alt="Masculino">
+                    <p>MASCULINO</p>
+                </div>
+                <div class="option" id="female">
+                    <img src="images/feminino.jpg" alt="Feminino">
+                    <p>FEMININO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda seção: Pergunta de idade (inicialmente oculta) -->
+    <div class="container" id="age-selection" style="display: none;">
+        <h1>Qual a sua idade?</h1>
+        <p>Utilizamos a sua idade apenas para personalizar a sua amarração amorosa.</p>
+        <div class="age-options">
+            <div class="row">
+                <div class="option">
+                    <img src="images/18-29.jpg" alt="18-29">
+                    <p>18-29</p>
+                </div>
+                <div class="option">
+                    <img src="images/29-39.jpg" alt="29-39">
+                    <p>29-39</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="option">
+                    <img src="images/39-49.jpg" alt="39-49">
+                    <p>39-49</p>
+                </div>
+                <div class="option">
+                    <img src="images/50+.jpg" alt="50+">
+                    <p>50+</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terceira seção: Informação + Foto + Botão (inicialmente oculta) -->
+    <div class="container" id="success-story" style="display: none;">
+        <h1><strong>+12 MIL Homens</strong></h1>
+        <p><strong>Escolheram a AMARRAÇÃO AMOROSA e reconquistaram o seu grande amor em 2024</strong></p>
+        <img src="images/encontro.jpg" alt="Encontro - Amarração Amorosa" class="success-photo">
+        <p>ENCONTRO - AMARRAÇÃO AMOROSA (12/07/2024)</p>
+        <button class="continue-button" id="continue-to-results">Continuar</button>
+    </div>
+
+    <!-- Quarta seção: Resultados (inicialmente oculta) -->
+    <div class="container" id="results" style="display: none;">
+        <h1>Veja o resultado de quem já aplicou a AMARRAÇÃO AMOROSA</h1>
+        <img src="images/resultados.jpg" alt="Resultados" class="results-photo">
+        <button class="continue-button" id="continue-final">Continuar</button>
+    </div>
+
+    <!-- Quinta seção: Motivos para Amarração Amorosa (inicialmente oculta) -->
+    <div class="container" id="reasons" style="display: none;">
+        <h1><strong>Porque você precisa fazer uma Amarração Amorosa?</strong></h1>
+        <h2>Isso é muito importante!</h2>
+        <ul>
+            <li>Sinto que o amor da minha vida está se distanciando <span class="emoji">💔</span></li>
+            <li>Quero fortalecer a conexão com meu amor <span class="emoji">❤️</span></li>
+            <li>Estou enfrentando dificuldades no meu relacionamento atual <span class="emoji">😟</span></li>
+            <li>Desejo atrair um novo amor para minha vida <span class="emoji">🌟</span></li>
+        </ul>
+        <button class="continue-button" id="continue-final">Continuar</button>
+    </div>
+
+    <script>
+        // Função para mostrar a seção de idade após selecionar o gênero masculino
+        document.getElementById('male').addEventListener('click', function() {
+            document.getElementById('gender-selection').style.display = 'none';
+            document.getElementById('age-selection').style.display = 'block';
+            document.getElementById('progress-bar-container').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '50%'; // Barra de progresso avança para 50%
+        });
+
+        // Evento para as opções de idade que avançam para a próxima seção com progresso adicional
+        document.querySelectorAll('.age-options .option').forEach(function(option) {
+            option.addEventListener('click', function() {
+                document.getElementById('age-selection').style.display = 'none';
+                document.getElementById('success-story').style.display = 'block';
+                document.getElementById('progress-bar').style.width = '75%'; // Barra de progresso avança para 75%
+            });
+        });
+
+        // Evento para o botão "Continuar" na seção de sucesso que avança para a quarta seção
+        document.getElementById('continue-to-results').addEventListener('click', function() {
+            document.getElementById('success-story').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '90%'; // Barra de progresso avança para 90%
+        });
+
+        // Evento para o botão "Continuar" na seção de resultados que avança para a quinta seção
+        document.getElementById('continue-final').addEventListener('click', function() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('reasons').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '100%'; // Barra de progresso avança para 100%
+        });
+    </script>
+</body>
+</html>
