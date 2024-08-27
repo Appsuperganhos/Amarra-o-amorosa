@@ -158,7 +158,7 @@ p {
     overflow: hidden;
     margin-top: 20px;
     height: 20px; /* Altura da barra de progresso */
-    position: relative; /* Para posicionar o efeito de coração */
+    position: relative; /* Para posicionar os corações */
 }
 
 .progress-bar {
@@ -170,28 +170,39 @@ p {
 }
 
 .progress-bar::before {
-    content: '❤️'; /* Emoji de coração */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20px; /* Largura dos corações */
+    background: red;
+    z-index: 1;
+}
+
+.progress-bar::after {
+    content: '❤️';
     font-size: 1.5em;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 0;
+    transform: translateY(-50%);
     opacity: 0;
-    animation: heart-animation 1.5s infinite;
+    animation: heart-fade 1.5s infinite;
 }
 
-@keyframes heart-animation {
+@keyframes heart-fade {
     0% {
-        transform: translate(-50%, -50%) scale(1);
         opacity: 0;
+        transform: translateY(-50%) scale(1);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1.5);
         opacity: 1;
+        transform: translateY(-50%) scale(1.2);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
         opacity: 0;
+        transform: translateY(-50%) scale(1);
     }
 }
 
