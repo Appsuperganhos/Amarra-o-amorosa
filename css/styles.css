@@ -1,36 +1,36 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Substitua isso pela cor de fundo desejada */
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 .logo {
     width: 120px; /* Ajuste conforme necessário */
     height: auto;
-    margin-bottom: 20px;
+    margin-top: 20px; /* Espaço entre o topo da página e a logo */
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
 }
 
 h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #333; /* Ajuste a cor do texto conforme necessário */
 }
 
 p {
     font-size: 1em;
     margin-bottom: 20px;
+    color: #666; /* Ajuste a cor do texto conforme necessário */
 }
 
 .gender-selection {
@@ -71,6 +71,7 @@ p {
     font-size: 1em;
     font-weight: bold;
     margin: 0;
+    color: #333; /* Ajuste a cor do texto conforme necessário */
 }
 
 .option img:hover {
