@@ -93,10 +93,33 @@ p {
 
 .continue-button { background-color: red; color: white; padding: 12px 30px; /* Botão mais largo / font-size: 1.2em; / Tamanho da fonte ajustado / border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; / Transição para transformação / animation: pulse 1.5s infinite; / Animação pulsante */ }
 
-.continue-button
-{ background-color: darkred; }
+..continue-button {
+    background-color: #FF0000; /* Cor do botão */
+    color: white;
+    padding: 12px 30px; /* Botão mais largo */
+    font-size: 1.2em; /* Tamanho da fonte ajustado */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transição para transformação */
+    animation: pulse 1.5s infinite; /* Animação pulsante */
+}
 
-/* Animação pulsante */ @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+.continue-button:hover {
+    background-color: darkred;
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 
 .progress-bar-container { width: 100%; background-color: #e0e0e0; border-radius: 8px; overflow: hidden; margin-top: 20px; height: 20px; /* Altura da barra de progresso */ }
 
