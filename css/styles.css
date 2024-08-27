@@ -116,14 +116,28 @@ p {
 .continue-button {
     background-color: red;
     color: white;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 12px 30px; /* Ajuste o padding para deixar o botão mais largo */
+    font-size: 1.2em; /* Ajuste o tamanho da fonte se necessário */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição para a transformação */
+    animation: pulse 1.5s infinite; /* Adiciona a animação pulsante */
 }
 
 .continue-button:hover {
     background-color: darkred;
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
