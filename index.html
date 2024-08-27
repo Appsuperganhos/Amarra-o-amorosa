@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Logo no topo -->
     <img src="images/logo.png" alt="Logo" class="logo">
 
     <!-- Barra de progresso (inicialmente oculta) -->
@@ -61,6 +62,15 @@
         </div>
     </div>
 
+    <!-- Terceira seção: Informação + Foto + Botão (inicialmente oculta) -->
+    <div class="container" id="success-story" style="display: none;">
+        <h1>+12 MIL Homens</h1>
+        <p>Escolheram a AMARRAÇÃO AMOROSA e reconquistaram o seu grande amor em 2024</p>
+        <img src="images/encontro.jpg" alt="Encontro - Amarração Amorosa" class="success-photo">
+        <p>ENCONTRO - AMARRAÇÃO AMOROSA (12/07/2024)</p>
+        <button class="continue-button">Continuar</button>
+    </div>
+
     <script>
         // Função para mostrar a seção de idade após selecionar o gênero masculino
         document.getElementById('male').addEventListener('click', function() {
@@ -70,11 +80,12 @@
             document.getElementById('progress-bar').style.width = '50%'; // Barra de progresso avança para 50%
         });
 
-        // Evento para as opções de idade que avançam a barra de progresso
+        // Evento para as opções de idade que avançam para a próxima seção com progresso adicional
         document.querySelectorAll('.age-options .option').forEach(function(option) {
             option.addEventListener('click', function() {
-                document.getElementById('progress-bar').style.width = '100%'; // Barra de progresso avança para 100%
-                // Aqui você pode adicionar o código para exibir a próxima seção do quiz, se necessário
+                document.getElementById('age-selection').style.display = 'none';
+                document.getElementById('success-story').style.display = 'block';
+                document.getElementById('progress-bar').style.width = '75%'; // Barra de progresso avança para 75%
             });
         });
     </script>
