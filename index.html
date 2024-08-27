@@ -9,6 +9,11 @@
 <body>
     <img src="images/logo.png" alt="Logo" class="logo">
 
+    <!-- Barra de progresso (inicialmente oculta) -->
+    <div class="progress-bar-container" id="progress-bar-container" style="display: none;">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
     <!-- Primeira seção: Seleção de gênero -->
     <div class="container" id="gender-selection">
         <h1>Pronta para descobrir o segredo para reconquistar seu amor?</h1>
@@ -33,21 +38,25 @@
         <h1>Qual a sua idade?</h1>
         <p>Utilizamos a sua idade apenas para personalizar a sua amarração amorosa.</p>
         <div class="age-options">
-            <div class="option">
-                <img src="images/18-29.jpg" alt="18-29">
-                <p>18-29</p>
+            <div class="row">
+                <div class="option">
+                    <img src="images/18-29.jpg" alt="18-29">
+                    <p>18-29</p>
+                </div>
+                <div class="option">
+                    <img src="images/29-39.jpg" alt="29-39">
+                    <p>29-39</p>
+                </div>
             </div>
-            <div class="option">
-                <img src="images/29-39.jpg" alt="29-39">
-                <p>29-39</p>
-            </div>
-            <div class="option">
-                <img src="images/39-49.jpg" alt="39-49">
-                <p>39-49</p>
-            </div>
-            <div class="option">
-                <img src="images/50+.jpg" alt="50+">
-                <p>50+</p>
+            <div class="row">
+                <div class="option">
+                    <img src="images/39-49.jpg" alt="39-49">
+                    <p>39-49</p>
+                </div>
+                <div class="option">
+                    <img src="images/50+.jpg" alt="50+">
+                    <p>50+</p>
+                </div>
             </div>
         </div>
     </div>
@@ -57,8 +66,17 @@
         document.getElementById('male').addEventListener('click', function() {
             document.getElementById('gender-selection').style.display = 'none';
             document.getElementById('age-selection').style.display = 'block';
+            document.getElementById('progress-bar-container').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '50%'; // Barra de progresso avança para 50%
+        });
+
+        // Evento para as opções de idade que avançam a barra de progresso
+        document.querySelectorAll('.age-options .option').forEach(function(option) {
+            option.addEventListener('click', function() {
+                document.getElementById('progress-bar').style.width = '100%'; // Barra de progresso avança para 100%
+                // Aqui você pode adicionar o código para exibir a próxima seção do quiz, se necessário
+            });
         });
     </script>
 </body>
-    </html>
-    
+</html>
