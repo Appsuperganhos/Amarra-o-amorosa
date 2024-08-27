@@ -1,3 +1,4 @@
+/* Estilo principal do corpo da página */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,6 +10,7 @@ body {
     height: 100vh;
 }
 
+/* Estilo do header com a logo */
 header {
     width: 100%;
     display: flex;
@@ -17,23 +19,25 @@ header {
     top: 0;
     left: 0;
     padding: 10px 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Cor de fundo para garantir que a logo seja visível */
 }
 
 .logo {
-    width: 120px;
+    width: 120px; /* Ajuste conforme necessário */
     height: auto;
 }
 
+/* Estilo do container */
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 80px;
+    margin-top: 80px; /* Adiciona margem superior para separar do topo da página */
 }
 
+/* Estilo de títulos e parágrafos */
 h1, h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -44,6 +48,7 @@ p {
     margin-bottom: 20px;
 }
 
+/* Estilo da seleção de gênero */
 .gender-selection {
     margin-top: 20px;
 }
@@ -62,7 +67,7 @@ p {
 }
 
 .option img {
-    width: 150px;
+    width: 150px; /* Ajuste conforme necessário */
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -71,11 +76,11 @@ p {
 }
 
 #male img {
-    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor #0000FF */
 }
 
 #female img {
-    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6);
+    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */
 }
 
 .option p {
@@ -88,6 +93,7 @@ p {
     transform: scale(1.05);
 }
 
+/* Estilo da seleção de idade */
 .age-options {
     margin-top: 20px;
 }
@@ -107,12 +113,13 @@ p {
 }
 
 .age-options .option img {
-    width: 100px;
+    width: 100px; /* Ajuste conforme necessário */
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
+/* Estilo da foto de sucesso e resultados */
 .success-photo, .results-photo {
     width: 100%;
     max-width: 400px;
@@ -122,76 +129,102 @@ p {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo do botão "Continuar" */
 .continue-button {
-    background-color: #FF0000;
+    background-color: #FF0000; /* Cor de fundo vermelha */
     color: white;
-    padding: 12px 30px;
-    font-size: 1.2em;
+    padding: 12px 30px; /* Botão mais largo */
+    font-size: 1.2em; /* Tamanho da fonte ajustado */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    animation: pulse 1.5s infinite;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
 }
 
 .continue-button:hover {
     background-color: darkred;
+    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.5); /* Intensifica a sombra azul ao passar o mouse */
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+.continue-button:active {
+    transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+    box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
 }
 
+/* Estilo da barra de progresso */
 .progress-bar-container {
     width: 100%;
     background-color: #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
-    height: 30px; /* Aumentei a altura da barra de progresso */
+    height: 30px; /* Aumenta a espessura da barra de progresso */
+    position: relative; /* Necessário para o posicionamento dos corações */
 }
 
 .progress-bar {
     height: 100%;
-    background-color: red;
+    background-color: #FF0000; /* Cor vermelha */
     width: 0%; /* Inicialmente 0% */
-    transition: width 0.6s ease; /* Transição suave para o avanço da barra */
+    transition: width 0.5s; /* Transição suave */
 }
-
-.hidden {
-    display: none;
-}
-
-.emoji {
-    font-size: 1.2em;
-    }
 
 .heart {
     position: absolute;
-    top: -25px;
     font-size: 1.5em;
     color: red;
-    animation: float 2s ease-in-out forwards;
-    opacity: 0;
+    pointer-events: none;
+    animation: heart-beat 1s infinite;
 }
 
-@keyframes float {
+@keyframes heart-beat {
     0% {
-        transform: translateY(0) scale(1);
+        transform: scale(1);
         opacity: 1;
     }
-    100% {
-        transform: translateY(-50px) scale(1.5);
-        opacity: 0;
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
     }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilo das opções de resposta na quinta seção */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.option-button {
+    background-color: #FFFFFF; /* Cor de fundo branca */
+    color: #000000; /* Cor do texto preta */
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 2px solid #FF0000; /* Borda vermelha */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
+}
+
+.option-button:hover {
+    background-color: #FF0000; /* Muda a cor de fundo ao passar o mouse */
+    color: white; /* Muda a cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.5); /* Intensifica a sombra azul ao passar o mouse */
+}
+
+.option-button:active {
+    transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+    box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
 }
 
 .hidden {
