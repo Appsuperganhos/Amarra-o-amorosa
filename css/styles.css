@@ -133,10 +133,10 @@ p {
 .continue-button {
     background-color: #FF0000; /* Cor de fundo vermelha */
     color: white;
-    padding: 15px 40px; /* Botão mais largo e alto */
-    font-size: 1.4em; /* Tamanho da fonte ajustado */
+    padding: 20px 50px; /* Botão mais largo e alto */
+    font-size: 1.6em; /* Tamanho da fonte ajustado */
     border: 3px solid #FF0000; /* Borda vermelha para mais destaque */
-    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
+    border-radius: 12px; /* Aumenta o arredondamento dos cantos */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
 }
@@ -151,24 +151,20 @@ p {
 }
 
 /* Estilo das opções de resposta na quinta seção */
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
 .option-button {
     background-color: #FFFFFF; /* Cor de fundo branca */
     color: #000000; /* Cor do texto preta */
-    padding: 15px 30px; /* Botão mais largo e alto */
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
+    padding: 12px 20px;
+    font-size: 1.1em;
     font-weight: bold;
     border: 2px solid #FF0000; /* Borda vermelha */
-    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
     box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaça o texto e o ícone */
 }
 
 .option-button:hover {
@@ -181,6 +177,12 @@ p {
 .option-button:active {
     transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
     box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
+}
+
+.option-icon {
+    width: 30px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
 
 /* Estilo da barra de progresso */
@@ -243,6 +245,9 @@ p {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
     box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaça o texto e o ícone */
 }
 
 .option-button:hover {
@@ -255,6 +260,12 @@ p {
 .option-button:active {
     transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
     box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
+}
+
+.option-icon {
+    width: 30px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
 
 .hidden {
