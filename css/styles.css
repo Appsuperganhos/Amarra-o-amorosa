@@ -17,11 +17,11 @@ header {
     top: 0;
     left: 0;
     padding: 10px 0;
-    background-color: #f4f4f4; /* Cor de fundo para garantir que a logo seja visível */
+    background-color: #f4f4f4;
 }
 
 .logo {
-    width: 120px; /* Ajuste conforme necessário */
+    width: 120px;
     height: auto;
 }
 
@@ -31,7 +31,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 80px; /* Adiciona margem superior para separar do topo da página */
+    margin-top: 80px;
 }
 
 h1, h2 {
@@ -62,7 +62,7 @@ p {
 }
 
 .option img {
-    width: 150px; /* Ajuste conforme necessário */
+    width: 150px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -71,11 +71,11 @@ p {
 }
 
 #male img {
-    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor #0000FF */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1);
 }
 
 #female img {
-    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */
+    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6);
 }
 
 .option p {
@@ -107,7 +107,7 @@ p {
 }
 
 .age-options .option img {
-    width: 100px; /* Ajuste conforme necessário */
+    width: 100px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -123,22 +123,21 @@ p {
 }
 
 .continue-button {
-    background-color: #FF0000; /* Cor do botão */
+    background-color: #FF0000;
     color: white;
-    padding: 12px 30px; /* Botão mais largo */
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
+    padding: 12px 30px;
+    font-size: 1.2em;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Transição para transformação */
-    animation: pulse 1.5s infinite; /* Animação pulsante */
+    transition: background-color 0.3s, transform 0.3s;
+    animation: pulse 1.5s infinite;
 }
 
 .continue-button:hover {
     background-color: darkred;
 }
 
-/* Animação pulsante */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -157,52 +156,35 @@ p {
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
-    height: 20px; /* Altura da barra de progresso */
-    position: relative; /* Para posicionar os corações */
+    height: 20px;
+    position: relative;
 }
 
 .progress-bar {
     height: 100%;
     background-color: red;
-    width: 0%; /* Inicialmente 0% */
-    transition: width 0.3s; /* Transição suave */
+    width: 0%;
+    transition: width 0.3s ease-out;
     position: relative;
 }
 
-.progress-bar::before {
-    content: '';
+.heart {
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 20px; /* Largura dos corações */
-    background: red;
-    z-index: 1;
-}
-
-.progress-bar::after {
-    content: '❤️';
+    top: -25px;
     font-size: 1.5em;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    color: red;
+    animation: float 2s ease-in-out forwards;
     opacity: 0;
-    animation: heart-fade 1.5s infinite;
 }
 
-@keyframes heart-fade {
+@keyframes float {
     0% {
-        opacity: 0;
-        transform: translateY(-50%) scale(1);
-    }
-    50% {
+        transform: translateY(0) scale(1);
         opacity: 1;
-        transform: translateY(-50%) scale(1.2);
     }
     100% {
+        transform: translateY(-50px) scale(1.5);
         opacity: 0;
-        transform: translateY(-50%) scale(1);
     }
 }
 
