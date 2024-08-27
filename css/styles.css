@@ -9,11 +9,20 @@ body {
     height: 100vh;
 }
 
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    background-color: #f4f4f4; /* Cor de fundo para garantir que a logo seja visível */
+}
+
 .logo {
-    width: 120px;
+    width: 120px; /* Ajuste conforme necessário */
     height: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 .container {
@@ -22,27 +31,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 100%;
-    max-width: 600px;
+    margin-top: 80px; /* Adiciona margem superior para separar do topo da página */
 }
 
-.progress-bar-container {
-    width: 100%;
-    background-color: #ddd;
-    margin-bottom: 20px;
-    height: 8px;
-    border-radius: 4px;
-}
-
-.progress-bar {
-    width: 0;
-    height: 100%;
-    background-color: red; /* Cor da barra de progresso */
-    border-radius: 4px;
-    transition: width 0.5s ease-in-out;
-}
-
-h1 {
+h1, h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
 }
@@ -52,15 +44,14 @@ p {
     margin-bottom: 20px;
 }
 
-.gender-selection, .age-options {
+.gender-selection {
     margin-top: 20px;
 }
 
-.options, .age-options .row {
+.options {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .option {
@@ -71,7 +62,7 @@ p {
 }
 
 .option img {
-    width: 150px;
+    width: 150px; /* Ajuste conforme necessário */
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -79,22 +70,26 @@ p {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.option img:hover {
-    transform: scale(1.05);
-}
-
 #male img {
-    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor #0000FF */
 }
 
 #female img {
-    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6);
+    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */
 }
 
 .option p {
     font-size: 1em;
     font-weight: bold;
     margin: 0;
+}
+
+.option img:hover {
+    transform: scale(1.05);
+}
+
+.age-options {
+    margin-top: 20px;
 }
 
 .row {
@@ -104,7 +99,21 @@ p {
     margin-bottom: 20px;
 }
 
-.success-photo {
+.age-options .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.age-options .option img {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.success-photo, .results-photo {
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -140,4 +149,28 @@ p {
     100% {
         transform: scale(1);
     }
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 20px; /* Altura da barra de progresso */
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: red;
+    width: 0%; /* Inicialmente 0% */
+    transition: width 0.3s; /* Transição suave */
+}
+
+.hidden {
+    display: none;
+}
+
+.emoji {
+    font-size: 1.2em;
 }
