@@ -156,17 +156,23 @@ p {
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
-    height: 20px;
-    position: relative;
+    height: 30px; /* Aumentei a altura da barra de progresso */
 }
 
 .progress-bar {
     height: 100%;
     background-color: red;
-    width: 0%;
-    transition: width 0.3s ease-out;
-    position: relative;
+    width: 0%; /* Inicialmente 0% */
+    transition: width 0.6s ease; /* Transição suave para o avanço da barra */
 }
+
+.hidden {
+    display: none;
+}
+
+.emoji {
+    font-size: 1.2em;
+    }
 
 .heart {
     position: absolute;
