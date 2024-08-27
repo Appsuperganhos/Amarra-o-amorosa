@@ -8,7 +8,9 @@
 </head>
 <body>
     <img src="images/logo.png" alt="Logo" class="logo">
-    <div class="container">
+
+    <!-- Primeira seção: Seleção de gênero -->
+    <div class="container" id="gender-selection">
         <h1>Pronta para descobrir o segredo para reconquistar seu amor?</h1>
         <p>Conheça o método da Amarração Amorosa e traga o seu amor de volta em 3 dias</p>
         <div class="gender-selection">
@@ -25,5 +27,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Segunda seção: Pergunta de idade (inicialmente oculta) -->
+    <div class="container" id="age-selection" style="display: none;">
+        <h1>Qual a sua idade?</h1>
+        <p>Utilizamos a sua idade apenas para personalizar a sua amarração amorosa.</p>
+        <div class="age-options">
+            <div class="option">
+                <img src="images/18-29.jpg" alt="18-29">
+                <p>18-29</p>
+            </div>
+            <div class="option">
+                <img src="images/29-39.jpg" alt="29-39">
+                <p>29-39</p>
+            </div>
+            <div class="option">
+                <img src="images/39-49.jpg" alt="39-49">
+                <p>39-49</p>
+            </div>
+            <div class="option">
+                <img src="images/50+.jpg" alt="50+">
+                <p>50+</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar a seção de idade após selecionar o gênero masculino
+        document.getElementById('male').addEventListener('click', function() {
+            document.getElementById('gender-selection').style.display = 'none';
+            document.getElementById('age-selection').style.display = 'block';
+        });
+    </script>
 </body>
-</html>
+    </html>
+    
