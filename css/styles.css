@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Adicionei isso para empurrar a logo para cima */
     align-items: center;
     height: 100vh;
 }
@@ -15,6 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 20px; /* Adiciona margem superior para separar da logo */
 }
 
 .logo {
@@ -22,13 +23,16 @@ body {
     height: auto;
     margin-bottom: 20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 p {
@@ -166,4 +170,22 @@ p {
     background-color: red;
     width: 0%; /* Inicialmente 0% */
     transition: width 0.3s; /* Transição suave */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li .emoji {
+    margin-left: 10px;
 }
