@@ -8,9 +8,10 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo"> <!-- Logo centralizada no topo -->
+        <img src="logo.png" alt="Logo" class="logo">
     </header>
     <div class="container">
+        <!-- Seção de Seleção de Gênero -->
         <section id="gender-selection">
             <h1>Pronto para descobrir o segredo para reconquistar seu amor?</h1>
             <p>Conheça o método da Amarração Amorosa e traga o seu amor de volta em 3 dias</p>
@@ -77,12 +78,13 @@
         <section id="motivation" class="hidden">
             <h1><strong>Porque você precisa fazer uma Amarração Amorosa?</strong></h1>
             <p><strong>Isso é muito importante!</strong></p>
-            <ul>
-                <li>Sinto que o amor da minha vida está se distanciando <span class="emoji">💔</span></li>
-                <li>Quero fortalecer a conexão com meu amor <span class="emoji">❤️</span></li>
-                <li>Estou enfrentando dificuldades no meu relacionamento atual <span class="emoji">😔</span></li>
-                <li>Desejo atrair um novo amor para minha vida <span class="emoji">💘</span></li>
-            </ul>
+            <button class="continue-button" onclick="nextSection()">Continuar</button>
+        </section>
+
+        <!-- Seção de Importância -->
+        <section id="importance" class="hidden">
+            <h1><strong>Porque você precisa fazer uma Amarração Amorosa?</strong></h1>
+            <p><strong>Isso é muito importante!</strong></p>
             <button class="continue-button" onclick="nextSection()">Continuar</button>
         </section>
     </div>
