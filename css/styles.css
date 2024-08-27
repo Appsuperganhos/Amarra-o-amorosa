@@ -4,9 +4,25 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    background-color: #f4f4f4; /* Cor de fundo para garantir que a logo seja visível */
+}
+
+.logo {
+    width: 120px; /* Ajuste conforme necessário */
+    height: auto;
 }
 
 .container {
@@ -15,25 +31,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 80px; /* Adiciona margem superior para separar do topo da página */
 }
 
-.logo {
-    width: 120px; /* Ajuste conforme necessário */
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1 {
+h1, h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
 }
 
 p {
@@ -110,16 +113,7 @@ p {
     margin-bottom: 10px;
 }
 
-.success-photo {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.results-photo {
+.success-photo, .results-photo {
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -173,20 +167,10 @@ p {
     transition: width 0.3s; /* Transição suave */
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.hidden {
+    display: none;
 }
 
-ul li {
-    font-size: 1em;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-ul li .emoji {
-    margin-left: 10px;
+.emoji {
+    font-size: 1.2em;
 }
