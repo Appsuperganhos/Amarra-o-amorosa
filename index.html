@@ -91,37 +91,7 @@
         <button class="continue-button" id="continue-final">Continuar</button>
     </div>
 
-    <script>
-        // Função para mostrar a seção de idade após selecionar o gênero masculino
-        document.getElementById('male').addEventListener('click', function() {
-            document.getElementById('gender-selection').style.display = 'none';
-            document.getElementById('age-selection').style.display = 'block';
-            document.getElementById('progress-bar-container').style.display = 'block';
-            document.getElementById('progress-bar').style.width = '50%'; // Barra de progresso avança para 50%
-        });
-
-        // Evento para as opções de idade que avançam para a próxima seção com progresso adicional
-        document.querySelectorAll('.age-options .option').forEach(function(option) {
-            option.addEventListener('click', function() {
-                document.getElementById('age-selection').style.display = 'none';
-                document.getElementById('success-story').style.display = 'block';
-                document.getElementById('progress-bar').style.width = '75%'; // Barra de progresso avança para 75%
-            });
-        });
-
-        // Evento para o botão "Continuar" na seção de sucesso que avança para a quarta seção
-        document.getElementById('continue-to-results').addEventListener('click', function() {
-            document.getElementById('success-story').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('progress-bar').style.width = '90%'; // Barra de progresso avança para 90%
-        });
-
-        // Evento para o botão "Continuar" na seção de resultados que avança para a quinta seção
-        document.getElementById('continue-final').addEventListener('click', function() {
-            document.getElementById('results').style.display = 'none';
-            document.getElementById('reasons').style.display = 'block';
-            document.getElementById('progress-bar').style.width = '100%'; // Barra de progresso avança para 100%
-        });
-    </script>
+    <!-- Referência ao arquivo JavaScript externo -->
+    <script src="js/script.js"></script>
 </body>
 </html>
