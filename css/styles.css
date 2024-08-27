@@ -71,106 +71,50 @@ p {
 }
 
 #male img {
-    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor #0000FF */
-}
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor
+#0000FF */ }
 
-#female img {
-    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */
-}
+#female img { box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */ }
 
-.option p {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0;
-}
+.option p { font-size: 1em; font-weight: bold; margin: 0; }
 
-.option img:hover {
-    transform: scale(1.05);
-}
+.option img
+{ transform: scale(1.05); }
 
-.age-options {
-    margin-top: 20px;
-}
+.age-options { margin-top: 20px; }
 
-.row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+.row { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
 
-.age-options .option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
+.age-options .option { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
 
-.age-options .option img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
+.age-options .option img { width: 100px; /* Ajuste conforme necessário */ height: auto; border-radius: 8px; margin-bottom: 10px; }
 
-.success-photo, .results-photo {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-}
+.success-photo, .results-photo { width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin-bottom: 20px; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); }
 
-.continue-button {
-    background-color: red;
-    color: white;
-    padding: 12px 30px; /* Botão mais largo */
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Transição para transformação */
-    animation: pulse 1.5s infinite; /* Animação pulsante */
-}
+.continue-button { background-color: red; color: white; padding: 12px 30px; /* Botão mais largo / font-size: 1.2em; / Tamanho da fonte ajustado / border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; / Transição para transformação / animation: pulse 1.5s infinite; / Animação pulsante */ }
 
-.continue-button:hover {
-    background-color: darkred;
-}
+.continue-button
+{ background-color: darkred; }
 
-/* Animação pulsante */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+/* Animação pulsante */ @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-.progress-bar-container {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 20px;
-    height: 20px; /* Altura da barra de progresso */
-}
+.progress-bar-container { width: 100%; background-color: #e0e0e0; border-radius: 8px; overflow: hidden; margin-top: 20px; height: 20px; /* Altura da barra de progresso */ }
 
-.progress-bar {
-    height: 100%;
-    background-color: red;
-    width: 0%; /* Inicialmente 0% */
-    transition: width 0.3s; /* Transição suave */
-}
+.progress-bar { height: 100%; background-color: red; width: 0%; /* Inicialmente 0% / transition: width 0.3s; / Transição suave */ }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
-.emoji {
-    font-size: 1.2em;
-}
+.emoji { font-size: 1.2em; }
+
+/* Estilo dos botões de resposta na nova seção / .response-button { display: block; width: 100%; background-color: #dcdcdc; / Cor base dos botões / color: black; padding: 12px 20px; font-size: 1em; border: none; border-radius: 8px; cursor: pointer; margin-bottom: 15px; transition: background-color 0.3s, transform 0.3s; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); / Sombra dos botões */ }
+
+#reason-1 { background-color: #ff6961; /* Cor para "Sinto que o amor da minha vida está se distanciando" */ }
+
+#reason-2 { background-color: #77dd77; /* Cor para "Quero fortalecer a conexão com meu amor" */ }
+
+#reason-3 { background-color: #fdfd96; /* Cor para "Estou enfrentando dificuldades no meu relacionamento atual" */ }
+
+#reason-4 { background-color: #aec6cf; /* Cor para "Desejo atrair um novo amor para minha vida" */ }
+
+.response-button
+{ transform: scale(1.05); /* Leve zoom no hover / box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); / Sombra mais intensa no hover */ }
