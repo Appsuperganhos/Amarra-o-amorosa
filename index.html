@@ -68,7 +68,14 @@
         <p><strong>Escolheram a AMARRAÇÃO AMOROSA e reconquistaram o seu grande amor em 2024</strong></p>
         <img src="images/encontro.jpg" alt="Encontro - Amarração Amorosa" class="success-photo">
         <p>ENCONTRO - AMARRAÇÃO AMOROSA (12/07/2024)</p>
-        <button class="continue-button">Continuar</button>
+        <button class="continue-button" id="continue-to-results">Continuar</button>
+    </div>
+
+    <!-- Quarta seção: Resultados (inicialmente oculta) -->
+    <div class="container" id="results" style="display: none;">
+        <h1>Veja o resultado de quem já aplicou a AMARRAÇÃO AMOROSA</h1>
+        <img src="images/resultados.jpg" alt="Resultados" class="results-photo">
+        <button class="continue-button" id="continue-final">Continuar</button>
     </div>
 
     <script>
@@ -87,6 +94,13 @@
                 document.getElementById('success-story').style.display = 'block';
                 document.getElementById('progress-bar').style.width = '75%'; // Barra de progresso avança para 75%
             });
+        });
+
+        // Evento para o botão "Continuar" na seção de sucesso que avança para a quarta seção
+        document.getElementById('continue-to-results').addEventListener('click', function() {
+            document.getElementById('success-story').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '90%'; // Barra de progresso avança para 90%
         });
     </script>
 </body>
