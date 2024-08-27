@@ -10,9 +10,9 @@ body {
 }
 
 .logo {
-    width: 120px; /* Ajuste conforme necessário */
+    width: 120px; 
     height: auto;
-    margin-top: 10px; /* Diminui a margem superior para deixar a logo mais próxima do topo */
+    margin-top: 10px; 
     margin-bottom: 20px;
 }
 
@@ -22,8 +22,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 100%; /* Garante que o container ocupe a largura total */
-    max-width: 600px; /* Limita a largura máxima do container */
+    width: 100%; 
+    max-width: 600px; 
 }
 
 h1 {
@@ -36,11 +36,11 @@ p {
     margin-bottom: 20px;
 }
 
-.gender-selection {
+.gender-selection, .age-options {
     margin-top: 20px;
 }
 
-.options {
+.options, .age-options {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -54,7 +54,7 @@ p {
 }
 
 .option img {
-    width: 150px; /* Ajuste conforme necessário */
+    width: 150px; 
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -62,20 +62,20 @@ p {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+.option img:hover {
+    transform: scale(1.05);
+}
+
 #male img {
-    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1); /* Sombra azul com cor #0000FF */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 1);
 }
 
 #female img {
-    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6); /* Sombra rosa */
+    box-shadow: 0px 8px 15px rgba(255, 0, 150, 0.6);
 }
 
 .option p {
     font-size: 1em;
     font-weight: bold;
     margin: 0;
-}
-
-.option img:hover {
-    transform: scale(1.05);
 }
