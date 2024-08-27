@@ -133,10 +133,10 @@ p {
 .continue-button {
     background-color: #FF0000; /* Cor de fundo vermelha */
     color: white;
-    padding: 12px 30px; /* Botão mais largo */
-    font-size: 1.2em; /* Tamanho da fonte ajustado */
-    border: none;
-    border-radius: 8px;
+    padding: 15px 40px; /* Botão mais largo e alto */
+    font-size: 1.4em; /* Tamanho da fonte ajustado */
+    border: 3px solid #FF0000; /* Borda vermelha para mais destaque */
+    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
 }
@@ -148,6 +148,39 @@ p {
 
 .continue-button:active {
     transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+}
+
+/* Estilo das opções de resposta na quinta seção */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.option-button {
+    background-color: #FFFFFF; /* Cor de fundo branca */
+    color: #000000; /* Cor do texto preta */
+    padding: 15px 30px; /* Botão mais largo e alto */
+    font-size: 1.2em; /* Tamanho da fonte ajustado */
+    font-weight: bold;
+    border: 2px solid #FF0000; /* Borda vermelha */
+    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
+}
+
+.option-button:hover {
+    background-color: #FF0000; /* Muda a cor de fundo ao passar o mouse */
+    color: white; /* Muda a cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+    box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.5); /* Intensifica a sombra azul ao passar o mouse */
+}
+
+.option-button:active {
+    transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+    box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
 }
 
 /* Estilo da barra de progresso */
