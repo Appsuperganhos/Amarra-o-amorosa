@@ -2,7 +2,7 @@
 function advanceProgressBar(percent) {
     var progressBar = document.getElementById('progress-bar');
     var currentWidth = parseFloat(progressBar.style.width) || 0;
-    progressBar.style.width = (currentWidth + percent) + '%';
+    progressBar.style.width = Math.min(currentWidth + percent, 100) + '%'; // Garante que a barra não ultrapasse 100%
 }
 
 // Eventos de clique para as opções de gênero
@@ -37,11 +37,20 @@ document.getElementById('continue-to-results').addEventListener('click', functio
 // Evento de clique para o botão "Continuar" na seção de resultados
 document.getElementById('continue-final').addEventListener('click', function() {
     document.getElementById('results').style.display = 'none';
-    document.getElementById('reasons').style.display = 'block';
+    document.getElementById('relationship-profile').style.display = 'block';
     advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar"
 });
 
-// Evento de clique para o botão "Continuar" na última seção (opcional)
+// Eventos de clique para as opções de perfil de relacionamento
+document.querySelectorAll('.relationship-profile .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('relationship-profile').style.display = 'none';
+        document.getElementById('final-section').style.display = 'block';
+        advanceProgressBar(25); // Avança 25% da barra ao selecionar um perfil de relacionamento
+    });
+});
+
+// Evento de clique para o botão "Continuar" na última seção
 document.getElementById('final-button').addEventListener('click', function() {
     advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar" na última seção
 });
