@@ -151,6 +151,13 @@ p {
 }
 
 /* Estilo das opções de resposta na quinta seção */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .option-button {
     background-color: #FFFFFF; /* Cor de fundo branca */
     color: #000000; /* Cor do texto preta */
@@ -163,8 +170,9 @@ p {
     transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
     box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.3); /* Sombra azul */
     display: flex;
-    align-items: center;
     justify-content: space-between; /* Espaça o texto e o ícone */
+    align-items: center; /* Alinha o texto e o ícone verticalmente */
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
 }
 
 .option-button:hover {
@@ -177,6 +185,10 @@ p {
 .option-button:active {
     transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
     box-shadow: 0px 6px 12px rgba(0, 0, 255, 0.4); /* Ajusta a sombra azul ao clicar */
+}
+
+.option-text {
+    flex: 1; /* Faz o texto ocupar o máximo de espaço disponível */
 }
 
 .option-icon {
