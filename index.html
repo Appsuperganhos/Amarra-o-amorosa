@@ -1,125 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amarração Amorosa</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Quiz de Relacionamento</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Logo no topo -->
-    <img src="images/logo.png" alt="Logo" class="logo">
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+    </header>
+    
+    <div id="gender-selection" class="container">
+        <h1>Escolha seu gênero</h1>
+        <div class="options">
+            <div id="male" class="option">
+                <img src="male-image.jpg" alt="Masculino">
+                <p>Masculino</p>
+            </div>
+            <div id="female" class="option">
+                <img src="female-image.jpg" alt="Feminino">
+                <p>Feminino</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="age-selection" class="container hidden">
+        <h1>Escolha sua faixa etária</h1>
+        <div class="age-options">
+            <div class="option">
+                <img src="age1.jpg" alt="18-25 anos">
+                <p>18-25 anos</p>
+            </div>
+            <div class="option">
+                <img src="age2.jpg" alt="26-35 anos">
+                <p>26-35 anos</p>
+            </div>
+            <div class="option">
+                <img src="age3.jpg" alt="36-45 anos">
+                <p>36-45 anos</p>
+            </div>
+            <div class="option">
+                <img src="age4.jpg" alt="46+ anos">
+                <p>46+ anos</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="success-story" class="container hidden">
+        <h1>História de Sucesso</h1>
+        <img src="success-story.jpg" alt="História de Sucesso" class="success-photo">
+        <p>Você fez a escolha certa! Agora, vamos para a próxima etapa.</p>
+        <button id="continue-to-results" class="continue-button">Continuar</button>
+    </div>
+    
+    <div id="results" class="container hidden">
+        <h1>Resultados</h1>
+        <img src="results.jpg" alt="Resultados" class="results-photo">
+        <p>Veja os resultados abaixo e siga para a próxima seção.</p>
+        <button id="continue-final" class="continue-button">Continuar</button>
+    </div>
 
-    <!-- Barra de progresso (inicialmente oculta) -->
-    <div class="progress-bar-container" id="progress-bar-container" style="display: none;">
+    <!-- Nova Seção: Perfil de Relacionamento -->
+    <div id="relationship-profile" class="container hidden">
+        <h1>Qual é o perfil de relacionamento que você deseja?</h1>
+        <h2>Isso é muito importante!</h2>
+        <div class="options">
+            <button class="option-button">
+                <span>Gostaria de um relacionamento que me trouxesse segurança.</span>
+                <img src="security-emoji.png" alt="Segurança">
+            </button>
+            <button class="option-button">
+                <span>Procuro alguém que não brinque com meus sentimentos.</span>
+                <img src="trust-emoji.png" alt="Confiança">
+            </button>
+            <button class="option-button">
+                <span>Quero uma parceira fiel e companheira.</span>
+                <img src="loyalty-emoji.png" alt="Lealdade">
+            </button>
+        </div>
+    </div>
+
+    <div class="progress-bar-container" id="progress-bar-container">
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- Primeira seção: Seleção de gênero -->
-    <div class="container" id="gender-selection">
-        <h1>Pronta para descobrir o segredo para reconquistar seu amor?</h1>
-        <p>Conheça o método da Amarração Amorosa e traga o seu amor de volta em 3 dias</p>
-        <div class="gender-selection">
-            <strong>Selecione seu gênero abaixo:</strong>
-            <div class="options">
-                <div class="option" id="male">
-                    <img src="images/masculino.jpg" alt="Masculino">
-                    <p>MASCULINO</p>
-                </div>
-                <div class="option" id="female">
-                    <img src="images/feminino.jpg" alt="Feminino">
-                    <p>FEMININO</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Segunda seção: Pergunta de idade (inicialmente oculta) -->
-    <div class="container" id="age-selection" style="display: none;">
-        <h1>Qual a sua idade?</h1>
-        <p>Utilizamos a sua idade apenas para personalizar a sua amarração amorosa.</p>
-        <div class="age-options">
-            <div class="row">
-                <div class="option">
-                    <img src="images/18-29.jpg" alt="18-29">
-                    <p>18-29</p>
-                </div>
-                <div class="option">
-                    <img src="images/29-39.jpg" alt="29-39">
-                    <p>29-39</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="option">
-                    <img src="images/39-49.jpg" alt="39-49">
-                    <p>39-49</p>
-                </div>
-                <div class="option">
-                    <img src="images/50+.jpg" alt="50+">
-                    <p>50+</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terceira seção: Informação + Foto + Botão (inicialmente oculta) -->
-    <div class="container" id="success-story" style="display: none;">
-        <h1><strong>+12 MIL Homens</strong></h1>
-        <p><strong>Escolheram a AMARRAÇÃO AMOROSA e reconquistaram o seu grande amor em 2024</strong></p>
-        <img src="images/encontro.jpg" alt="Encontro - Amarração Amorosa" class="success-photo">
-        <p>ENCONTRO - AMARRAÇÃO AMOROSA (12/07/2024)</p>
-        <button class="continue-button" id="continue-to-results">Continuar</button>
-    </div>
-
-    <!-- Quarta seção: Resultados (inicialmente oculta) -->
-    <div class="container" id="results" style="display: none;">
-        <h1>Veja o resultado de quem já aplicou a AMARRAÇÃO AMOROSA</h1>
-        <img src="images/resultados.jpg" alt="Resultados" class="results-photo">
-        <button class="continue-button" id="continue-final">Continuar</button>
-    </div>
-
-    <!-- Quinta seção: Motivos para Amarração Amorosa (inicialmente oculta) -->
-    <div class="container" id="reasons" style="display: none;">
-    <h1><strong>Porque você precisa fazer uma Amarração Amorosa?</strong></h1>
-    <h2>Isso é muito importante!</h2>
-    <div class="options">
-        <button class="option-button" id="reason-1">
-            Sinto que o amor da minha vida está se distanciando
-            <img src="images/heart_broken.png" alt="Emoji de coração partido" class="option-icon">
-        </button>
-        <button class="option-button" id="reason-2">
-            Quero fortalecer a conexão com meu amor
-            <img src="images/heart.png" alt="Emoji de coração" class="option-icon">
-        </button>
-        <button class="option-button" id="reason-3">
-            Estou enfrentando dificuldades no meu relacionamento atual
-            <img src="images/sad.png" alt="Emoji triste" class="option-icon">
-        </button>
-        <button class="option-button" id="reason-4">
-            Desejo atrair um novo amor para minha vida
-            <img src="images/star.png" alt="Emoji estrela" class="option-icon">
-        </button>
-    </div>
-
-    <!-- Sexta seção: Perfil de relacionamento desejado (inicialmente oculta) -->
-    <div class="container" id="relationship-profile" style="display: none;">
-    <h1><strong>Qual é o perfil de relacionamento que você deseja?</strong></h1>
-    <h2>Isso é muito importante!</h2>
-    <button class="option-button" data-next="final-section">
-        Gostaria de um relacionamento que me trouxesse segurança.
-        <img src="images/security-icon.png" alt="Segurança" class="option-icon">
-    </button>
-    <button class="option-button" data-next="final-section">
-        Procuro alguém que não brinque com meus sentimentos.
-        <img src="images/feelings-icon.png" alt="Sentimentos" class="option-icon">
-    </button>
-    <button class="option-button" data-next="final-section">
-        Quero uma parceira fiel e companheira.
-        <img src="images/loyalty-icon.png" alt="Fidelidade" class="option-icon">
-    </button>
- </div>
-
-    <!-- Referência ao arquivo JavaScript externo -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
