@@ -78,6 +78,19 @@
         <button class="continue-button" id="continue-final">Continuar</button>
     </div>
 
+    <!-- Quinta seção: Motivos para Amarração Amorosa (inicialmente oculta) -->
+    <div class="container" id="reasons" style="display: none;">
+        <h1><strong>Porque você precisa fazer uma Amarração Amorosa?</strong></h1>
+        <h2>Isso é muito importante!</h2>
+        <ul>
+            <li>Sinto que o amor da minha vida está se distanciando <span class="emoji">💔</span></li>
+            <li>Quero fortalecer a conexão com meu amor <span class="emoji">❤️</span></li>
+            <li>Estou enfrentando dificuldades no meu relacionamento atual <span class="emoji">😟</span></li>
+            <li>Desejo atrair um novo amor para minha vida <span class="emoji">🌟</span></li>
+        </ul>
+        <button class="continue-button" id="continue-to-final">Continuar</button>
+    </div>
+
     <script>
         // Função para mostrar a seção de idade após selecionar o gênero masculino
         document.getElementById('male').addEventListener('click', function() {
@@ -101,6 +114,13 @@
             document.getElementById('success-story').style.display = 'none';
             document.getElementById('results').style.display = 'block';
             document.getElementById('progress-bar').style.width = '90%'; // Barra de progresso avança para 90%
+        });
+
+        // Evento para o botão "Continuar" na seção de resultados que avança para a quinta seção
+        document.getElementById('continue-final').addEventListener('click', function() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('reasons').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '100%'; // Barra de progresso avança para 100%
         });
     </script>
 </body>
