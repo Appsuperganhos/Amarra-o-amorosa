@@ -157,7 +157,7 @@ p {
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
-    height: 20px; /* Altura da barra de progresso */
+    height: 30px; /* Aumentada a altura da barra de progresso */
 }
 
 .progress-bar {
