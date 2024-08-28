@@ -138,24 +138,30 @@ function startReconquestProgressBar() {
 document.addEventListener('DOMContentLoaded', function() {
     // Função para mostrar a décima quarta seção
     function showReconquestChanceSection() {
-        document.getElementById('reconquest-chance').style.display = 'block';
+        document.getElementById('future-desired').style.display = 'none'; // Ocultar a décima terceira seção
+        document.getElementById('reconquest-chance').style.display = 'block'; // Exibir a décima quarta seção
         document.getElementById('progress-bar-container').style.display = 'none'; // Ocultar a barra de progresso principal
+        startChanceProgressBar(); // Iniciar a barra de progresso da décima quarta seção
     }
 
-    // Função para exibir a décima terceira seção
-    function showFutureDesiredSection() {
-        document.getElementById('future-desired').style.display = 'block';
+    // Função para iniciar a barra de progresso da décima quarta seção
+    function startChanceProgressBar() {
+        let progressBar = document.getElementById('chance-progress-bar');
+        let width = 0;
+        let interval = setInterval(function() {
+            if (width >= 100) {
+                clearInterval(interval);
+                document.getElementById('chance-result').style.display = 'block'; // Exibir o resultado final
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+            }
+        }, 30); // Ajuste a velocidade do carregamento da barra se necessário
     }
 
-    // Evento para a décima terceira seção
-    document.getElementById('option-1').addEventListener('click', function() {
-        document.getElementById('future-desired').style.display = 'block';
-    });
-    document.getElementById('option-2').addEventListener('click', function() {
-        document.getElementById('future-desired').style.display = 'block';
-    });
-
-    // Evento para a décima quarta seção
-    document.getElementById('continue-to-final').addEventListener('click', showReconquestChanceSection);
+    // Eventos para as opções da décima terceira seção
+    document.getElementById('option-1').addEventListener('click', showReconquestChanceSection);
+    document.getElementById('option-2').addEventListener('click', showReconquestChanceSection);
 });
+
 
