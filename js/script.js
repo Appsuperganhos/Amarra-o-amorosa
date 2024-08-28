@@ -101,3 +101,12 @@ document.querySelectorAll('#recurring-thoughts .option-button').forEach(function
         advanceProgressBar(); // Avança 10% da barra de progresso
     });
 });
+
+// Evento de clique para as opções na décima segunda seção
+document.querySelectorAll('#negative-energies .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('negative-energies').style.display = 'none'; // Oculta a décima segunda seção
+        document.getElementById('future-desired').style.display = 'block'; // Exibe a décima terceira seção
+        advanceProgressBar(); // Avança 10% da barra de progresso
+    });
+});
