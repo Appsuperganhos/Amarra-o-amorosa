@@ -134,3 +134,14 @@ function startReconquestProgressBar() {
         }
     }, 100); // Ajuste o tempo conforme necessário
 }
+
+/* CSS para ocultar a barra de progresso principal na décima quarta seção */
+#reconquest-chance #progress-bar-container {
+    display: none; /* Ocultar a barra de progresso principal nesta seção */
+}
+
+/* CSS para a barra de progresso específica da seção décima quarta */
+#reconquest-chance .progress-bar-container {
+    /* Estilo da barra de progresso específica da seção décima quarta */
+}
+
