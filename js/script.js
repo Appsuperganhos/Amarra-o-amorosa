@@ -92,3 +92,12 @@ document.getElementById('continue-to-final').addEventListener('click', function(
     document.getElementById('recurring-thoughts').style.display = 'block';
     advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar" na nona seção
 });
+
+// Evento de clique para as opções na décima primeira seção
+document.querySelectorAll('#previous-attempts .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('previous-attempts').style.display = 'none'; // Oculta a oitava seção
+        document.getElementById('negative-energy-influence').style.display = 'block'; // Mostra a décima primeira seção
+        advanceProgressBar(); // Avança 10% da barra quando a oitava seção é ocultada e a nona seção aparece
+    });
+});
