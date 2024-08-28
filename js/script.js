@@ -1,8 +1,8 @@
-// Função para avançar a barra de progresso gradualmente em 10%
-function advanceProgressBar() {
+// Função para avançar a barra de progresso gradualmente
+function advanceProgressBar(percent) {
     var progressBar = document.getElementById('progress-bar');
     var currentWidth = parseFloat(progressBar.style.width) || 0;
-    var targetPercent = currentWidth + 10; // Avança 10% a cada vez
+    var targetPercent = currentWidth + (percent || 10); // Usa o parâmetro ou avança 10% por padrão
     var increment = 1; // Ajuste o incremento conforme necessário
     var interval = setInterval(function() {
         if (currentWidth < targetPercent) {
