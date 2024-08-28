@@ -71,9 +71,8 @@ document.querySelectorAll('#relationship-profile .option-button').forEach(functi
 // Evento de clique para as opções na sétima seção
 document.querySelectorAll('#relationship-improvements .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        // Exemplo para avançar para a próxima seção
-        // Atualize o ID da próxima seção conforme necessário
-        document.getElementById('relationship-improvements').style.display = 'none';
-        // Exemplo: document.getElementById('next-section').style.display = 'block'; 
+        document.getElementById('relationship-improvements').style.display = 'none'; // Oculta a sétima seção
+        document.getElementById('previous-attempts').style.display = 'block'; // Exibe a oitava seção
+        advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
     });
 });
