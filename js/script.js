@@ -109,7 +109,6 @@ document.querySelectorAll('#negative-energies .option-button').forEach(function(
         document.getElementById('future-desired').style.display = 'block'; // Exibe a décima terceira seção
         advanceProgressBar(5); // Avança 5% da barra de progresso
     });
-    
 });
 
 // Evento de clique para as opções na décima terceira seção (future-desired)
@@ -120,12 +119,6 @@ document.querySelectorAll('#future-desired .option-button').forEach(function(but
         startReconquestProgressBar(); // Inicia o carregamento da barra de progresso
     });
 });
-
-function advanceProgressBar(percentage) {
-    const progressBar = document.querySelector('.progress-bar');
-    let currentWidth = parseFloat(progressBar.style.width) || 0;
-    progressBar.style.width = (currentWidth + percentage) + '%';
-}
 
 function startReconquestProgressBar() {
     const progressBar = document.getElementById('chance-progress-bar');
