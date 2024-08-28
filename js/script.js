@@ -41,9 +41,13 @@ document.getElementById('continue-final').addEventListener('click', function() {
     advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar"
 });
 
-// Evento de clique para o botão "Continuar" na última seção (opcional)
-document.getElementById('final-button').addEventListener('click', function() {
-    advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar" na última seção
+// Evento de clique para as opções na quinta seção
+document.querySelectorAll('#reasons .option-button').forEach(function(option) {
+    option.addEventListener('click', function() {
+        document.getElementById('reasons').style.display = 'none';
+        document.getElementById('relationship-profile').style.display = 'block';
+        advanceProgressBar(25); // Avança 25% da barra ao selecionar uma opção
+    });
 });
 
 // Evento de clique para as opções na nova seção de perfil de relacionamento
