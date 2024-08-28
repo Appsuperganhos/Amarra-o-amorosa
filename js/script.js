@@ -1,8 +1,16 @@
-// Função para avançar a barra de progresso em uma porcentagem específica
-function advanceProgressBar(percent) {
+// Função para avançar a barra de progresso gradualmente
+function advanceProgressBarGradually(targetPercent) {
     var progressBar = document.getElementById('progress-bar');
     var currentWidth = parseFloat(progressBar.style.width) || 0;
-    progressBar.style.width = (currentWidth + percent) + '%';
+    var increment = 1; // Ajuste o incremento conforme necessário
+    var interval = setInterval(function() {
+        if (currentWidth < targetPercent) {
+            currentWidth += increment;
+            progressBar.style.width = currentWidth + '%';
+        } else {
+            clearInterval(interval);
+        }
+    }, 10); // Ajuste o intervalo conforme necessário para a velocidade do avanço
 }
 
 // Eventos de clique para as opções de gênero
@@ -23,7 +31,7 @@ document.querySelectorAll('.age-options .option').forEach(function(option) {
     option.addEventListener('click', function() {
         document.getElementById('age-selection').style.display = 'none';
         document.getElementById('success-story').style.display = 'block';
-        advanceProgressBar(25); // Avança 25% da barra ao selecionar uma faixa etária
+        advanceProgressBarGradually(25); // Avança 25% da barra ao selecionar uma faixa etária
     });
 });
 
@@ -31,14 +39,14 @@ document.querySelectorAll('.age-options .option').forEach(function(option) {
 document.getElementById('continue-to-results').addEventListener('click', function() {
     document.getElementById('success-story').style.display = 'none';
     document.getElementById('results').style.display = 'block';
-    advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar"
+    advanceProgressBarGradually(50); // Avança 25% da barra ao clicar em "Continuar" na seção de sucesso
 });
 
 // Evento de clique para o botão "Continuar" na seção de resultados
 document.getElementById('continue-final').addEventListener('click', function() {
     document.getElementById('results').style.display = 'none';
     document.getElementById('reasons').style.display = 'block';
-    advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar"
+    advanceProgressBarGradually(75); // Avança 25% da barra ao clicar em "Continuar" na seção de resultados
 });
 
 // Evento de clique para as opções na quinta seção
@@ -46,16 +54,6 @@ document.querySelectorAll('#reasons .option-button').forEach(function(option) {
     option.addEventListener('click', function() {
         document.getElementById('reasons').style.display = 'none';
         document.getElementById('relationship-profile').style.display = 'block';
-        advanceProgressBar(25); // Avança 25% da barra ao selecionar uma opção
-    });
-});
-
-// Evento de clique para as opções na nova seção de perfil de relacionamento
-document.querySelectorAll('#relationship-profile .option-button').forEach(function(option) {
-    option.addEventListener('click', function() {
-        document.getElementById('relationship-profile').style.display = 'none';
-        // Substitua 'next-section-id' pelo ID da próxima seção
-        document.getElementById('next-section-id').style.display = 'block';
-        advanceProgressBar(25); // Avança 25% da barra ao selecionar uma opção
+        advanceProgressBarGradually(75); // Avança a barra de progresso até 75% gradualmente
     });
 });
