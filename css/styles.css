@@ -209,29 +209,30 @@ p {
 .progress-bar {
     width: 0;
     height: 100%;
-    background-color: transparent; /* Fundo transparente para mostrar o gradiente animado */
+    background-color: #ff0000; /* Cor vermelha sólida */
     position: relative;
+    overflow: hidden;
 }
 
-@keyframes wave {
+@keyframes wave-animation {
     0% {
         background-position: 0 0;
     }
     100% {
-        background-position: 100px 0;
+        background-position: 200px 0;
     }
 }
 
-.progress-bar::after {
+.progress-bar::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 200%; /* Faz o gradiente cobrir o dobro da largura da barra para criar o efeito de onda */
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 25%, rgba(255, 0, 0, 0.4) 50%, rgba(255, 0, 0, 0.8) 75%);
+    background: linear-gradient(-45deg, rgba(255, 0, 0, 0.7) 25%, rgba(255, 0, 0, 0.9) 50%, rgba(255, 0, 0, 0.7) 75%);
     background-size: 200px 100%;
-    animation: wave 2s infinite linear;
+    animation: wave-animation 2s linear infinite; /* Animação contínua para o efeito de onda */
 }
 /* Estilo das opções de resposta na quinta seção */
 .options {
