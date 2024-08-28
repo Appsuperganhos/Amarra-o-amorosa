@@ -136,15 +136,26 @@ function startReconquestProgressBar() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Função para mostrar a décima quarta seção e ocultar a barra de progresso principal
+    // Função para mostrar a décima quarta seção
     function showReconquestChanceSection() {
         document.getElementById('reconquest-chance').style.display = 'block';
         document.getElementById('progress-bar-container').style.display = 'none'; // Ocultar a barra de progresso principal
     }
 
-    // Adapte este código para quando a décima quarta seção for exibida
-    document.getElementById('continue-final').addEventListener('click', showReconquestChanceSection);
+    // Função para exibir a décima terceira seção
+    function showFutureDesiredSection() {
+        document.getElementById('future-desired').style.display = 'block';
+    }
 
-    // Ou, dependendo do fluxo do seu quiz, chame `showReconquestChanceSection` na lógica que exibe a décima quarta seção
+    // Evento para a décima terceira seção
+    document.getElementById('option-1').addEventListener('click', function() {
+        document.getElementById('future-desired').style.display = 'block';
+    });
+    document.getElementById('option-2').addEventListener('click', function() {
+        document.getElementById('future-desired').style.display = 'block';
+    });
+
+    // Evento para a décima quarta seção
+    document.getElementById('continue-to-final').addEventListener('click', showReconquestChanceSection);
 });
 
