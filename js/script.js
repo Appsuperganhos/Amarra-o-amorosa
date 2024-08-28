@@ -107,6 +107,6 @@ document.querySelectorAll('#negative-energies .option-button').forEach(function(
     button.addEventListener('click', function() {
         document.getElementById('negative-energies').style.display = 'none'; // Oculta a décima segunda seção
         document.getElementById('future-desired').style.display = 'block'; // Exibe a décima terceira seção
-        advanceProgressBar(); // Avança 10% da barra de progresso
+        advanceProgressBar(5); // Avança 5% da barra de progresso
     });
 });
