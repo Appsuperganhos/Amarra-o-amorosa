@@ -60,10 +60,20 @@ document.querySelectorAll('#reasons .option-button').forEach(function(option) {
 });
 
 // Evento de clique para as opções de resposta na sexta seção
+document.querySelectorAll('#relationship-profile .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('relationship-profile').style.display = 'none';
+        document.getElementById('relationship-improvements').style.display = 'block'; // Atualize o ID da próxima seção para a sétima seção
+        advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
+    });
+});
+
+// Evento de clique para as opções na sétima seção
 document.querySelectorAll('#relationship-improvements .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
+        // Exemplo para avançar para a próxima seção
+        // Atualize o ID da próxima seção conforme necessário
         document.getElementById('relationship-improvements').style.display = 'none';
-        document.getElementById('next-section').style.display = 'block'; // Substitua 'next-section' pelo ID da próxima seção
-        advanceProgressBar(10); // Avança 10% da barra ao selecionar uma opção
+        // Exemplo: document.getElementById('next-section').style.display = 'block'; 
     });
 });
