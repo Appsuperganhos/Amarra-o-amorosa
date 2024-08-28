@@ -109,4 +109,28 @@ document.querySelectorAll('#negative-energies .option-button').forEach(function(
         document.getElementById('future-desired').style.display = 'block'; // Exibe a décima terceira seção
         advanceProgressBar(5); // Avança 5% da barra de progresso
     });
+    
 });
+// Manipular a seleção na décima terceira seção
+document.querySelectorAll('#thirteenth-section .option-button').forEach(button => {
+    button.addEventListener('click', function() {
+        document.getElementById('thirteenth-section').style.display = 'none';
+        document.getElementById('reconquest-chance').style.display = 'block';
+        startReconquestProgressBar();
+    });
+});
+
+function startReconquestProgressBar() {
+    const progressBar = document.getElementById('chance-progress-bar');
+    let width = 0;
+    const interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById('calculating-text').style.display = 'none';
+            document.getElementById('chance-result').style.display = 'block';
+        } else {
+            width += 5;
+            progressBar.style.width = width + '%';
+        }
+    }, 100); // Ajuste o tempo conforme necessário
+}
