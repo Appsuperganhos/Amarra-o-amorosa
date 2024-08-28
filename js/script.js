@@ -111,11 +111,17 @@ document.querySelectorAll('#negative-energies .option-button').forEach(function(
     });
     
 });
+
 // Manipular a seleção na décima terceira seção
 document.querySelectorAll('#thirteenth-section .option-button').forEach(button => {
     button.addEventListener('click', function() {
+        // Ocultar a décima terceira seção
         document.getElementById('thirteenth-section').style.display = 'none';
+        
+        // Exibir a décima quarta seção
         document.getElementById('reconquest-chance').style.display = 'block';
+        
+        // Iniciar o carregamento da barra de progresso
         startReconquestProgressBar();
     });
 });
