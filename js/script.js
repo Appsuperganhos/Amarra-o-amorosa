@@ -45,3 +45,12 @@ document.getElementById('continue-final').addEventListener('click', function() {
 document.getElementById('final-button').addEventListener('click', function() {
     advanceProgressBar(25); // Avança 25% da barra ao clicar em "Continuar" na última seção
 });
+
+// Evento de clique para as opções na nova seção de perfil de relacionamento
+document.querySelectorAll('#relationship-profile .option-button').forEach(function(option) {
+    option.addEventListener('click', function() {
+        document.getElementById('relationship-profile').style.display = 'none';
+        // Substitua 'next-section-id' pelo ID da próxima seção
+        document.getElementById('next-section-id').style.display = 'block';
+        advanceProgressBar(25); // Avança 25% da barra ao selecionar uma opção
+});
