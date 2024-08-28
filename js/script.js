@@ -59,11 +59,11 @@ document.querySelectorAll('#reasons .option-button').forEach(function(option) {
     });
 });
 
-// Evento de clique para as opções na sexta seção
-document.querySelectorAll('#relationship-profile .option-button').forEach(function(option) {
-    option.addEventListener('click', function() {
-        document.getElementById('relationship-profile').style.display = 'none';
-        document.getElementById('final-section').style.display = 'block';
-        advanceProgressBar(); // Avança 10% da barra ao clicar em qualquer botão na sexta seção
+// Evento de clique para as opções de resposta na sexta seção
+document.querySelectorAll('#relationship-improvements .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('relationship-improvements').style.display = 'none';
+        document.getElementById('next-section').style.display = 'block'; // Substitua 'next-section' pelo ID da próxima seção
+        advanceProgressBar(10); // Avança 10% da barra ao selecionar uma opção
     });
 });
