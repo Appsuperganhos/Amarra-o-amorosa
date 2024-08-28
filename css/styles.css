@@ -333,3 +333,35 @@ p {
     display: none;
 }
 
+/* Estilo para a caixa de resultado */
+.result-box {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result-box-top {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.result-box-middle {
+    margin-bottom: 10px;
+}
+
+.small-bar {
+    background-color: white;
+    height: 5px;
+    width: 99.8%; /* Ajuste conforme necessário */
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.result-box-bottom {
+    font-size: 14px;
+    color: #fff;
+}
+
