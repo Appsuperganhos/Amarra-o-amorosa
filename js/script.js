@@ -76,3 +76,12 @@ document.querySelectorAll('#relationship-improvements .option-button').forEach(f
         advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
     });
 });
+
+// Evento de clique para as opções na oitava seção
+document.querySelectorAll('#previous-attempts .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('previous-attempts').style.display = 'none';
+        document.getElementById('ninth-section').style.display = 'block'; // Exibe a nona seção
+        advanceProgressBar(); // Avança 10% da barra ao clicar em qualquer botão na oitava seção
+    });
+});
