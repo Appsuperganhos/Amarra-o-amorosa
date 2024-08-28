@@ -163,5 +163,3 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('option-1').addEventListener('click', showReconquestChanceSection);
     document.getElementById('option-2').addEventListener('click', showReconquestChanceSection);
 });
-
-
