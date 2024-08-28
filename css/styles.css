@@ -333,35 +333,43 @@ p {
     display: none;
 }
 
-/* Estilo para a caixa de resultado */
+/* Estilo do retângulo vermelho na décima quarta seção */
 .result-box {
-    background-color: red;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
+    background-color: red; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branca */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento superior */
+    position: relative; /* Necessário para posicionar elementos internos */
 }
 
+/* Texto superior dentro do retângulo vermelho */
 .result-box-top {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 18px; /* Tamanho da fonte ajustado */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
-.result-box-middle {
-    margin-bottom: 10px;
-}
-
-.small-bar {
-    background-color: white;
-    height: 5px;
-    width: 99.8%; /* Ajuste conforme necessário */
-    border-radius: 2px;
-    margin: 0 auto;
-}
-
+/* Texto inferior dentro do retângulo vermelho */
 .result-box-bottom {
-    font-size: 14px;
-    color: #fff;
+    font-size: 14px; /* Tamanho da fonte menor */
+    margin-top: 10px; /* Espaçamento superior */
 }
 
+/* Estilo da pequena barra dentro do retângulo vermelho */
+.small-bar {
+    background-color: white; /* Cor de fundo branca */
+    height: 5px; /* Altura da barra */
+    width: 99.8%; /* Largura da barra */
+    border-radius: 2px; /* Cantos arredondados da barra */
+    margin: 0 auto; /* Centraliza a barra horizontalmente */
+}
+
+/* Estilo das marcações na parte inferior do retângulo vermelho */
+.result-box-bottom span {
+    display: inline-block; /* Exibe em linha com espaçamento */
+    width: 30px; /* Largura das marcações */
+    font-size: 12px; /* Tamanho da fonte para marcações */
+    text-align: center; /* Centraliza o texto das marcações */
+    color: #fff; /* Cor do texto das marcações */
+}
