@@ -80,8 +80,7 @@ document.querySelectorAll('#relationship-improvements .option-button').forEach(f
 // Evento de clique para as opções na oitava seção
 document.querySelectorAll('#previous-attempts .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        document.getElementById('previous-attempts').style.display = 'none';
-        document.getElementById('ninth-section').style.display = 'block'; // Exibe a nona seção
-        advanceProgressBar(); // Avança 10% da barra ao clicar em qualquer botão na oitava seção
+        document.getElementById('previous-attempts').style.display = 'none'; // Oculta a oitava seção
+        document.getElementById('ninth-section').style.display = 'block'; // Mostra a nona seção
     });
 });
