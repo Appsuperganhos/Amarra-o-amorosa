@@ -82,6 +82,6 @@ document.querySelectorAll('#previous-attempts .option-button').forEach(function(
     button.addEventListener('click', function() {
         document.getElementById('previous-attempts').style.display = 'none'; // Oculta a oitava seção
         document.getElementById('ninth-section').style.display = 'block'; // Mostra a nona seção
-        advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
+        advanceProgressBar(); // Avança 10% da barra quando a oitava seção é ocultada e a nona seção aparece
     });
 });
