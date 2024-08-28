@@ -85,3 +85,10 @@ document.querySelectorAll('#previous-attempts .option-button').forEach(function(
         advanceProgressBar(); // Avança 10% da barra quando a oitava seção é ocultada e a nona seção aparece
     });
 });
+
+// Evento de clique para o botão "Continuar" na nona seção
+document.getElementById('continue-to-next').addEventListener('click', function() {
+    document.getElementById('final-step').style.display = 'none';
+    document.getElementById('recurring-thoughts').style.display = 'block';
+    advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar" na nona seção
+});
