@@ -120,12 +120,31 @@ document.querySelectorAll('#future-desired .option-button').forEach(function(but
     });
 });
 
-/* CSS para ocultar a barra de progresso principal na décima quarta seção */
-#reconquest-chance #progress-bar-container {
-    display: none; /* Ocultar a barra de progresso principal nesta seção */
+function startReconquestProgressBar() {
+    const progressBar = document.getElementById('chance-progress-bar');
+    let width = 0;
+    const interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById('calculating-text').style.display = 'none';
+            document.getElementById('chance-result').style.display = 'block';
+        } else {
+            width += 5;
+            progressBar.style.width = width + '%';
+        }
+    }, 100); // Ajuste o tempo conforme necessário
 }
 
-/* CSS para a barra de progresso específica da seção décima quarta */
-#reconquest-chance .progress-bar-container {
-    /* Estilo da barra de progresso específica da seção décima quarta */
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Função para mostrar a décima quarta seção e ocultar a barra de progresso principal
+    function showReconquestChanceSection() {
+        document.getElementById('reconquest-chance').style.display = 'block';
+        document.getElementById('progress-bar-container').style.display = 'none'; // Ocultar a barra de progresso principal
+    }
+
+    // Adapte este código para quando a décima quarta seção for exibida
+    document.getElementById('continue-final').addEventListener('click', showReconquestChanceSection);
+
+    // Ou, dependendo do fluxo do seu quiz, chame `showReconquestChanceSection` na lógica que exibe a décima quarta seção
+});
+
