@@ -87,8 +87,8 @@ document.querySelectorAll('#previous-attempts .option-button').forEach(function(
 });
 
 // Evento de clique para o botão "Continuar" na nona seção
-document.getElementById('continue-to-next').addEventListener('click', function() {
-    document.getElementById('final-step').style.display = 'none';
+document.getElementById('continue-to-final').addEventListener('click', function() {
+    document.getElementById('ninth-section').style.display = 'none';
     document.getElementById('recurring-thoughts').style.display = 'block';
     advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar" na nona seção
 });
