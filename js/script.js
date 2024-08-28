@@ -92,3 +92,12 @@ document.getElementById('continue-to-final').addEventListener('click', function(
     document.getElementById('recurring-thoughts').style.display = 'block';
     advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar" na nona seção
 });
+
+// Evento de clique para as opções da décima primeira seção
+document.querySelectorAll('.option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('recurring-thoughts').style.display = 'none'; // Oculta a décima primeira seção
+        document.getElementById('negative-energies').style.display = 'block'; // Exibe a décima segunda seção
+        advanceProgressBar(10); // Avança 10% da barra de progresso
+    });
+});
