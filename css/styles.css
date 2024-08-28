@@ -327,3 +327,9 @@ p {
     height: auto;
     margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
+
+/* CSS para ocultar a barra de progresso principal quando a décima quarta seção estiver visível */
+#reconquest-chance.show-progress-bar-hidden #progress-bar-container {
+    display: none;
+}
+
