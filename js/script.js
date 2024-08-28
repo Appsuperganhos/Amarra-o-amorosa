@@ -14,112 +14,91 @@ function advanceProgressBar(percent) {
     }, 10); // Ajuste o intervalo conforme necessário para a velocidade do avanço
 }
 
+// Função para exibir a próxima seção e ocultar a seção atual
+function showSection(currentSectionId, nextSectionId) {
+    document.getElementById(currentSectionId).style.display = 'none';
+    document.getElementById(nextSectionId).style.display = 'block';
+    advanceProgressBar(); // Avança 10% da barra ao trocar de seção
+}
+
 // Eventos de clique para as opções de gênero
 document.getElementById('male').addEventListener('click', function() {
-    document.getElementById('gender-selection').style.display = 'none';
-    document.getElementById('age-selection').style.display = 'block';
+    showSection('gender-selection', 'age-selection');
     document.getElementById('progress-bar-container').style.display = 'block';
 });
 
 document.getElementById('female').addEventListener('click', function() {
-    document.getElementById('gender-selection').style.display = 'none';
-    document.getElementById('age-selection').style.display = 'block';
+    showSection('gender-selection', 'age-selection');
     document.getElementById('progress-bar-container').style.display = 'block';
 });
 
 // Evento de clique para as opções de idade
 document.querySelectorAll('.age-options .option').forEach(function(option) {
     option.addEventListener('click', function() {
-        document.getElementById('age-selection').style.display = 'none';
-        document.getElementById('success-story').style.display = 'block';
-        advanceProgressBar(); // Avança 10% da barra ao selecionar uma faixa etária
+        showSection('age-selection', 'success-story');
     });
 });
 
 // Evento de clique para o botão "Continuar" na seção de sucesso
 document.getElementById('continue-to-results').addEventListener('click', function() {
-    document.getElementById('success-story').style.display = 'none';
-    document.getElementById('results').style.display = 'block';
-    advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar"
+    showSection('success-story', 'results');
 });
 
 // Evento de clique para o botão "Continuar" na seção de resultados
 document.getElementById('continue-final').addEventListener('click', function() {
-    document.getElementById('results').style.display = 'none';
-    document.getElementById('reasons').style.display = 'block';
-    advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar"
+    showSection('results', 'reasons');
 });
 
-// Evento de clique para as opções na quinta seção
+// Evento de clique para as opções na seção de motivos
 document.querySelectorAll('#reasons .option-button').forEach(function(option) {
     option.addEventListener('click', function() {
-        document.getElementById('reasons').style.display = 'none';
-        document.getElementById('relationship-profile').style.display = 'block';
-        advanceProgressBar(); // Avança 10% da barra ao clicar em qualquer botão na seção de motivos
+        showSection('reasons', 'relationship-profile');
     });
 });
 
-// Evento de clique para as opções de resposta na sexta seção
+// Evento de clique para as opções na seção de perfil de relacionamento
 document.querySelectorAll('#relationship-profile .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        document.getElementById('relationship-profile').style.display = 'none';
-        document.getElementById('relationship-improvements').style.display = 'block'; // Atualize o ID da próxima seção para a sétima seção
-        advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
+        showSection('relationship-profile', 'relationship-improvements');
     });
 });
 
-// Evento de clique para as opções na sétima seção
+// Evento de clique para as opções na seção de melhorias no relacionamento
 document.querySelectorAll('#relationship-improvements .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        document.getElementById('relationship-improvements').style.display = 'none'; // Oculta a sétima seção
-        document.getElementById('previous-attempts').style.display = 'block'; // Exibe a oitava seção
-        advanceProgressBar(); // Avança 10% da barra ao selecionar uma opção
+        showSection('relationship-improvements', 'previous-attempts');
     });
 });
 
-// Evento de clique para as opções na oitava seção
+// Evento de clique para as opções na seção de tentativas anteriores
 document.querySelectorAll('#previous-attempts .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        document.getElementById('previous-attempts').style.display = 'none'; // Oculta a oitava seção
-        document.getElementById('ninth-section').style.display = 'block'; // Mostra a nona seção
-        advanceProgressBar(); // Avança 10% da barra quando a oitava seção é ocultada e a nona seção aparece
+        showSection('previous-attempts', 'emotionality');
     });
 });
 
-// Evento de clique para o botão "Continuar" na nona seção
+// Evento de clique para o botão "Continuar" na seção emocionalidade
 document.getElementById('continue-to-final').addEventListener('click', function() {
-    document.getElementById('ninth-section').style.display = 'none';
-    document.getElementById('recurring-thoughts').style.display = 'block';
-    advanceProgressBar(); // Avança 10% da barra ao clicar em "Continuar" na nona seção
+    showSection('emotionality', 'bad-energies');
 });
 
-// Evento de clique para as opções da décima primeira seção
+// Evento de clique para as opções na seção de energias ruins
+document.querySelectorAll('#bad-energies .option-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        showSection('bad-energies', 'recurring-thoughts');
+    });
+});
+
+// Evento de clique para as opções na seção de pensamentos recorrentes
 document.querySelectorAll('#recurring-thoughts .option-button').forEach(function(button) {
     button.addEventListener('click', function() {
-        document.getElementById('recurring-thoughts').style.display = 'none'; // Oculta a décima primeira seção
-        document.getElementById('negative-energies').style.display = 'block'; // Exibe a décima segunda seção
-        advanceProgressBar(); // Avança 10% da barra de progresso
+        showSection('recurring-thoughts', 'calculating-chance');
+        // Inicia a barra de progresso para a chance de reconquista
+        startReconquestProgressBar();
     });
 });
 
-// Evento de clique para as opções na décima segunda seção
-document.querySelectorAll('#negative-energies .option-button').forEach(function(button) {
-    button.addEventListener('click', function() {
-        document.getElementById('negative-energies').style.display = 'none'; // Oculta a décima segunda seção
-        document.getElementById('future-desired').style.display = 'block'; // Exibe a décima terceira seção
-        advanceProgressBar(5); // Avança 5% da barra de progresso
-    });
-});
-
-// Evento de clique para as opções na décima terceira seção (future-desired)
-document.querySelectorAll('#future-desired .option-button').forEach(function(button) {
-    button.addEventListener('click', function() {
-        document.getElementById('future-desired').style.display = 'none'; // Oculta a décima terceira seção
-        document.getElementById('reconquest-chance').style.display = 'block'; // Exibe a décima quarta seção
-        startReconquestProgressBar(); // Inicia o carregamento da barra de progresso
-    });
-});
-
+// Função para iniciar a barra de progresso da décima quarta seção
 function startReconquestProgressBar() {
     const progressBar = document.getElementById('chance-progress-bar');
     let width = 0;
@@ -127,39 +106,10 @@ function startReconquestProgressBar() {
         if (width >= 100) {
             clearInterval(interval);
             document.getElementById('calculating-text').style.display = 'none';
-            document.getElementById('chance-result').style.display = 'block';
+            document.getElementById('high-chance').style.display = 'block';
         } else {
-            width += 5;
+            width += 5; // Ajuste o incremento conforme necessário
             progressBar.style.width = width + '%';
         }
     }, 100); // Ajuste o tempo conforme necessário
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Função para mostrar a décima quarta seção
-    function showReconquestChanceSection() {
-        document.getElementById('future-desired').style.display = 'none'; // Ocultar a décima terceira seção
-        document.getElementById('reconquest-chance').style.display = 'block'; // Exibir a décima quarta seção
-        document.getElementById('progress-bar-container').style.display = 'none'; // Ocultar a barra de progresso principal
-        startChanceProgressBar(); // Iniciar a barra de progresso da décima quarta seção
-    }
-
-    // Função para iniciar a barra de progresso da décima quarta seção
-    function startChanceProgressBar() {
-        let progressBar = document.getElementById('chance-progress-bar');
-        let width = 0;
-        let interval = setInterval(function() {
-            if (width >= 100) {
-                clearInterval(interval);
-                document.getElementById('chance-result').style.display = 'block'; // Exibir o resultado final
-            } else {
-                width++;
-                progressBar.style.width = width + '%';
-            }
-        }, 30); // Ajuste a velocidade do carregamento da barra se necessário
-    }
-
-    // Eventos para as opções da décima terceira seção
-    document.getElementById('option-1').addEventListener('click', showReconquestChanceSection);
-    document.getElementById('option-2').addEventListener('click', showReconquestChanceSection);
-});
