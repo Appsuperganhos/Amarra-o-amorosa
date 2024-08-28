@@ -53,4 +53,5 @@ document.querySelectorAll('#relationship-profile .option-button').forEach(functi
         // Substitua 'next-section-id' pelo ID da próxima seção
         document.getElementById('next-section-id').style.display = 'block';
         advanceProgressBar(25); // Avança 25% da barra ao selecionar uma opção
+    });
 });
