@@ -339,8 +339,12 @@ p {
 .info-box {
     background-color: red; /* Cor de fundo do retângulo */
     border: 2px solid #fff; /* Borda branca para destacar o retângulo */
-    width: 160%; /* Largura do retângulo */
+    width: 80%; /* Ajusta a largura para garantir que fique dentro do layout */
+    max-width: 600px; /* Define a largura máxima do retângulo */
     height: 150px; /* Altura do retângulo */
     box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
     margin: 20px 0; /* Espaçamento superior e inferior */
+    display: flex; /* Alinha o conteúdo dentro do retângulo */
+    align-items: center; /* Centraliza verticalmente o conteúdo dentro do retângulo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do retângulo */
 }
