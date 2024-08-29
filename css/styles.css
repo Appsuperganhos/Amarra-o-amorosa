@@ -327,3 +327,13 @@ p {
     height: auto;
     margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
+
+/* Estilo do retângulo */
+.info-box {
+    margin-top: 20px; /* Espaçamento superior */
+    padding: 20px; /* Espaçamento interno */
+    border: 2px solid #c00; /* Borda vermelha com 2px de largura */
+    background-color: #f00; /* Cor de fundo vermelha */
+    color: #fff; /* Cor do texto branca para contraste */
+    border-radius: 8px; /* Bordas arredondadas */
+}
