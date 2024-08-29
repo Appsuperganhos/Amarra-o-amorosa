@@ -395,3 +395,36 @@ p {
     color: #fff;
     font-weight: bold;
 }
+
+/* Estilo da barra de progresso dentro do retângulo */
+.progress-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajuste conforme necessário */
+    height: 20px; /* Altura da barra de progresso */
+    background-color: #fff; /* Cor de fundo da barra de progresso */
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a barra não exceda o contêiner */
+}
+
+.progress-bar-inner {
+    width: 0%; /* Inicialmente 0% */
+    height: 100%;
+    background-color: #FF0000; /* Cor da barra de progresso */
+    border-radius: 10px;
+    animation: progressAnimation 3s forwards; /* Animação da barra de progresso */
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
