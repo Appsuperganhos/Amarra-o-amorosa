@@ -419,25 +419,12 @@ p {
     animation: progressAnimation 3s forwards; /* Animação da barra de progresso */
 }
 
-.progress-pointer {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #fff; /* Cor do ponteiro */
-    border: 2px solid #8B0000; /* Borda do ponteiro para destacar */
-    border-radius: 50%; /* Ponteiro redondo */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
-}
-
-/* Estilo do marcador na barra de progresso */
+/* Estilo do marcador na barra de progresso (bolinha branca) */
 .progress-marker {
     position: absolute;
     top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
+    left: 0%; /* Inicialmente no início da barra */
+    transform: translate(-50%, -50%); /* Ajusta o alinhamento vertical e horizontal */
     width: 12px;
     height: 12px;
     background-color: #fff; /* Cor da bolinha */
@@ -460,55 +447,15 @@ p {
     }
 }
 
-/* Animação do marcador */
+/* Animação do marcador (bolinha branca) */
 @keyframes markerAnimation {
     0% {
         left: 0%;
     }
+    50% {
+        left: 50%;
+    }
     100% {
         left: 100%;
     }
-}
-
-/* Estilo do botão "Continuar" */
-.continuar-button {
-    background-color: #FF0000; /* Cor de fundo vermelha */
-    color: white;
-    padding: 20px 60px; /* Botão maior */
-    font-size: 1.6em; /* Tamanho da fonte ajustado */
-    border: 3px solid #FF0000; /* Borda vermelha para mais destaque */
-    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
-    margin-top: 30px; /* Espaçamento superior */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Sombra para destaque */
-}
-
-.continuar-button:hover {
-    background-color: darkred;
-    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
-}
-
-.continuar-button:active {
-    transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
-}
-
-/* Animação pulsante */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-    }
-}
-
-.continuar-button {
-    animation: pulse 1.5s infinite; /* Aplica a animação pulsante */
 }
