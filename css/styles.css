@@ -411,7 +411,7 @@ p {
 .info-box {
     background-color: red; /* Cor de fundo do retângulo */
     border: 2px solid #fff; /* Borda branca para destacar o retângulo */
-    width: 160%; /* Largura do retângulo */
+    width: 100%; /* Largura do retângulo */
     height: 150px; /* Altura do retângulo */
     box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
     margin: 20px 0; /* Espaçamento superior e inferior */
