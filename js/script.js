@@ -1,16 +1,17 @@
-function startReconquestProgressBar() {
-    const progressBar = document.getElementById('chance-progress-bar');
-    let width = 0;
-    const interval = setInterval(function() {
-        if (width >= 100) {
-            clearInterval(interval);
-            document.getElementById('calculating-text').style.display = 'none';
-            document.getElementById('chance-result').style.display = 'block';
+// Função para avançar a barra de progresso gradualmente
+function advanceProgressBar(percent) {
+    var progressBar = document.getElementById('progress-bar');
+    var currentWidth = parseFloat(progressBar.style.width) || 0;
+    var targetPercent = currentWidth + (percent || 10); // Usa o parâmetro ou avança 10% por padrão
+    var increment = 1; // Ajuste o incremento conforme necessário
+    var interval = setInterval(function() {
+        if (currentWidth < targetPercent) {
+            currentWidth += increment;
+            progressBar.style.width = currentWidth + '%';
         } else {
-            width += 0.5; // Carregamento mais lento
-            progressBar.style.width = width + '%';
+            clearInterval(interval);
         }
-    }, 100); // Intervalo maior para um carregamento mais lento
+    }, 10); // Ajuste o intervalo conforme necessário para a velocidade do avanço
 }
 
 // Eventos de clique para as opções de gênero
