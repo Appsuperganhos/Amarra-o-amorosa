@@ -116,7 +116,8 @@ document.querySelectorAll('#future-desired .option-button').forEach(function(but
     button.addEventListener('click', function() {
         document.getElementById('future-desired').style.display = 'none'; // Oculta a décima terceira seção
         document.getElementById('reconquest-chance').style.display = 'block'; // Exibe a décima quarta seção
-        startReconquestProgressBar(); // Inicia o carregamento da barra de progresso
+        document.getElementById('progress-bar-container').style.display = 'none'; // Oculta a barra de progresso principal
+        startReconquestProgressBar(); // Inicia o carregamento da barra de progresso secundária
     });
 });
 
