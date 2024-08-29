@@ -398,38 +398,18 @@ p {
 
 /* Estilo da barra de progresso */
 .progress-bar-container {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 20px;
-    height: 30px; /* Aumenta a espessura da barra de progresso */
-    position: relative; /* Necessário para o posicionamento dos corações */
+/* Estilo do retângulo com animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* Barra de progresso interna */
-.progress-bar-inner {
-    height: 100%;
-    background-color: #8B0000; /* Cor vermelha escura */
-    width: 0%; /* Inicialmente 0% */
-    transition: width 2s ease-out; /* Transição suave */
-    position: relative; /* Necessário para o posicionamento da bolinha */
-}
-
-/* Bolinha branca */
-.progress-marker {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 20px; /* Tamanho da bolinha */
-    height: 20px;
-    background-color: white; /* Cor da bolinha */
-    border-radius: 50%; /* Faz a bolinha redonda */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    transition: left 2s ease-out; /* Sincroniza com a barra */
-}
-
-/* Estilo do retângulo */
 .info-box {
     background-color: red; /* Cor de fundo do retângulo */
     border: 2px solid #fff; /* Borda branca para destacar o retângulo */
@@ -437,50 +417,125 @@ p {
     height: 150px; /* Altura do retângulo */
     box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
     margin: 20px 0; /* Espaçamento superior e inferior */
-    position: relative; /* Necessário para posicionamento absoluto dos elementos internos */
-    border-radius: 20px; /* Aumenta o arredondamento dos cantos */
-    overflow: hidden; /* Garante que a bolinha não ultrapasse os limites do retângulo */
+    position: relative; /* Necessário para o posicionamento absoluto dos textos e da barra de progresso */
+    border-radius: 12px; /* Bordas arredondadas */
+    animation: fadeIn 0.5s ease-out; /* Animação de aparecimento */
 }
 
-/* Estilo do botão "Continuar" */
-.continuar-button {
-    background-color: #FF0000; /* Cor de fundo vermelha */
-    color: white;
-    padding: 20px 60px; /* Botão maior */
-    font-size: 1.6em; /* Tamanho da fonte ajustado */
-    border: 3px solid #FF0000; /* Borda vermelha para mais destaque */
-    border-radius: 10px; /* Aumenta o arredondamento dos cantos */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
-    margin-top: 30px; /* Espaçamento superior */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Sombra para destaque */
+/* Estilos para os textos dentro do retângulo */
+.info-box .top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.continuar-button:hover {
-    background-color: darkred;
-    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+.info-box .top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.continuar-button:active {
-    transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+.info-box .bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-weight: bold;
 }
 
-/* Animação pulsante */
-@keyframes pulse {
+.info-box .bottom-middle {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.info-box .bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Estilo da barra de progresso dentro do retângulo */
+.progress-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajuste conforme necessário */
+    height: 20px; /* Altura da barra de progresso */
+    background-color: #fff; /* Cor de fundo da barra de progresso */
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a barra não exceda o contêiner */
+    position: relative; /* Necessário para o posicionamento absoluto do ponteiro e marcador */
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #8B0000; /* Cor vermelha escura */
+    width: 0%; /* Inicialmente 0% */
+    border-radius: 10px;
+    position: relative; /* Necessário para o posicionamento da bolinha */
+    animation: progressAnimation 3s forwards; /* Animação da barra de progresso */
+}
+
+.progress-pointer {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #fff; /* Cor do ponteiro */
+    border: 2px solid #8B0000; /* Borda do ponteiro para destacar */
+    border-radius: 50%; /* Ponteiro redondo */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
+}
+
+/* Estilo do marcador na barra de progresso */
+.progress-marker {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #fff; /* Cor da bolinha */
+    border-radius: 50%; /* Bolinha redonda */
+    border: 2px solid #8B0000; /* Borda da bolinha */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
+    animation: markerAnimation 3s forwards; /* Animação do marcador */
+}
+
+/* Animação da barra de progresso */
+@keyframes progressAnimation {
     0% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        width: 0%;
     }
     50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+        width: 50%;
     }
     100% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        width: 100%;
     }
 }
 
-.continuar-button {
-    animation: pulse 1.5s infinite; /* Aplica a animação pulsante */
+/* Animação do marcador */
+@keyframes markerAnimation {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
 }
