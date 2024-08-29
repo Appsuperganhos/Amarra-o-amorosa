@@ -332,9 +332,8 @@ p {
 .info-box {
     background-color: red; /* Cor de fundo do retângulo */
     border: 2px solid #fff; /* Borda branca para destacar o retângulo */
-    width: 160%; /* Largura do retângulo, ajuste conforme necessário */
-    height: 150px; /* Altura do retângulo, ajuste conforme necessário */
+    width: 160%; /* Largura do retângulo */
+    height: 150px; /* Altura do retângulo */
     box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
-    margin: 20px auto; /* Centraliza o retângulo horizontalmente e adiciona espaçamento superior e inferior */
+    margin: 20px auto; /* Centraliza horizontalmente e adiciona espaçamento superior e inferior */
 }
-
