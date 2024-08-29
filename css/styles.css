@@ -396,77 +396,50 @@ p {
     font-weight: bold;
 }
 
-/* Estilo da barra de progresso dentro do retângulo */
-.progress-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Ajuste conforme necessário */
-    height: 20px; /* Altura da barra de progresso */
-    background-color: #fff; /* Cor de fundo da barra de progresso */
-    border-radius: 10px;
-    overflow: hidden; /* Garante que a barra não exceda o contêiner */
-    position: relative; /* Necessário para o posicionamento absoluto do ponteiro e marcador */
+/* Estilo da barra de progresso */
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 30px; /* Aumenta a espessura da barra de progresso */
+    position: relative; /* Necessário para o posicionamento dos corações */
 }
 
+/* Barra de progresso interna */
 .progress-bar-inner {
     height: 100%;
     background-color: #8B0000; /* Cor vermelha escura */
     width: 0%; /* Inicialmente 0% */
-    border-radius: 10px;
-    animation: progressAnimation 3s forwards; /* Animação da barra de progresso */
+    transition: width 2s ease-out; /* Transição suave */
+    position: relative; /* Necessário para o posicionamento da bolinha */
 }
 
-.progress-pointer {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #fff; /* Cor do ponteiro */
-    border: 2px solid #8B0000; /* Borda do ponteiro para destacar */
-    border-radius: 50%; /* Ponteiro redondo */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
-}
-
-/* Estilo do marcador na barra de progresso */
+/* Bolinha branca */
 .progress-marker {
     position: absolute;
     top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background-color: #fff; /* Cor da bolinha */
-    border-radius: 50%; /* Bolinha redonda */
-    border: 2px solid #8B0000; /* Borda da bolinha */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra leve */
-    animation: markerAnimation 3s forwards; /* Animação do marcador */
+    left: 0;
+    width: 20px; /* Tamanho da bolinha */
+    height: 20px;
+    background-color: white; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha redonda */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    transition: left 2s ease-out; /* Sincroniza com a barra */
 }
 
-/* Animação da barra de progresso */
-@keyframes progressAnimation {
-    0% {
-        width: 0%;
-    }
-    50% {
-        width: 50%;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-/* Animação do marcador */
-@keyframes markerAnimation {
-    0% {
-        left: 0%;
-    }
-    100% {
-        left: 100%;
-    }
+/* Estilo do retângulo */
+.info-box {
+    background-color: red; /* Cor de fundo do retângulo */
+    border: 2px solid #fff; /* Borda branca para destacar o retângulo */
+    width: 160%; /* Largura do retângulo */
+    height: 150px; /* Altura do retângulo */
+    box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
+    margin: 20px 0; /* Espaçamento superior e inferior */
+    position: relative; /* Necessário para posicionamento absoluto dos elementos internos */
+    border-radius: 20px; /* Aumenta o arredondamento dos cantos */
+    overflow: hidden; /* Garante que a bolinha não ultrapasse os limites do retângulo */
 }
 
 /* Estilo do botão "Continuar" */
