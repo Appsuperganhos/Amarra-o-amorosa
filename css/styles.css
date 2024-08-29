@@ -330,10 +330,11 @@ p {
 
 /* Estilo do retângulo */
 .info-box {
-    margin-top: 20px; /* Espaçamento superior */
-    padding: 20px; /* Espaçamento interno */
-    border: 2px solid #c00; /* Borda vermelha com 2px de largura */
-    background-color: #f00; /* Cor de fundo vermelha */
-    color: #fff; /* Cor do texto branca para contraste */
-    border-radius: 8px; /* Bordas arredondadas */
+    background-color: red; /* Cor de fundo do retângulo */
+    border: 2px solid #fff; /* Borda branca para destacar o retângulo */
+    width: 80%; /* Largura do retângulo, ajuste conforme necessário */
+    height: 150px; /* Altura do retângulo, ajuste conforme necessário */
+    box-sizing: border-box; /* Inclui a borda e o padding na largura e altura totais */
+    margin: 20px auto; /* Centraliza o retângulo horizontalmente e adiciona espaçamento superior e inferior */
 }
+
