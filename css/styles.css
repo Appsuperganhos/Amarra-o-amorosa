@@ -328,6 +328,18 @@ p {
     margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
 
+/* Definição da animação para o retângulo */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: scale(0.9); /* Começa ligeiramente menor */
+    }
+    to {
+        opacity: 1; /* Fica completamente visível */
+        transform: scale(1); /* Fica no tamanho original */
+    }
+}
+
 /* Estilo do retângulo */
 #reconquest-chance {
     display: flex;
@@ -348,4 +360,6 @@ p {
     align-items: center; /* Centraliza verticalmente o conteúdo dentro do retângulo */
     justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do retângulo */
     border-radius: 30px; /* Arredonda os cantos do retângulo */
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 1s ease-out forwards; /* Aplica a animação de aparecimento */
 }
