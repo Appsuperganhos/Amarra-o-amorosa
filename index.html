@@ -225,26 +225,24 @@
 <!-- Décima quarta seção: Calculando a chance de reconquistar (inicialmente oculta) -->
 <div class="container" id="reconquest-chance" style="display: none;">
     <div class="progress-bar-container">
-        <div class="progress-bar-inner">
-            <div class="progress-marker"></div>
-        </div>
+        <div class="progress-bar" id="chance-progress-bar"></div>
     </div>
     <p id="calculating-text">Calculando chance de reconquistar...</p>
     <div id="chance-result" style="display: none;">
         <h1>Sua chance é MUITO ALTA!</h1>
         <p>Você tem 99,8% de chance de reconquistar seu grande amor utilizando uma Amarração Amorosa.</p>
         <div class="info-box">
-            <div class="top-right">99,8%</div>
-            <div class="top-left">Chance de reconquistar seu amor</div>
-            <div class="bottom-left">BAIXA</div>
-            <div class="bottom-middle">MÉDIA</div>
-            <div class="bottom-right">ALTA</div>
+            <div class="top-left">99,8%</div>
+            <div class="top-right">Chance de reconquistar seu amor</div>
+            <div class="bottom-left">BAIXO</div>
+            <div class="bottom-middle">MEIO</div>
+            <div class="bottom-right">ALTO</div>
             <div class="progress-wrapper">
-                <!-- A barra e o marcador já estão inclusos na div .info-box -->
+                <div class="progress-bar-inner">
+                    <div class="progress-marker"></div>
+                </div>
             </div>
         </div>
-        <!-- Botão "Continuar" -->
-        <button class="continuar-button">CONTINUAR</button>
     </div>
 </div>
     
