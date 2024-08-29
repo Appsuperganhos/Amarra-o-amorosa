@@ -197,43 +197,47 @@ p {
     margin-left: 10px; /* Espaçamento entre o texto e o ícone */
 }
 
+/* Estilo da barra de progresso */
 .progress-bar-container {
     width: 100%;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
     overflow: hidden;
-    position: relative;
-    height: 30px; /* Altura da barra de progresso */
+    margin-top: 20px;
+    height: 30px; /* Aumenta a espessura da barra de progresso */
+    position: relative; /* Necessário para o posicionamento dos corações */
 }
 
 .progress-bar {
-    width: 0;
     height: 100%;
-    background-color: #ff0000; /* Cor vermelha sólida */
-    position: relative;
-    overflow: hidden;
+    background-color: #FF0000; /* Cor vermelha */
+    width: 0%; /* Inicialmente 0% */
+    transition: width 0.5s; /* Transição suave */
 }
 
-@keyframes wave-animation {
+.heart {
+    position: absolute;
+    font-size: 1.5em;
+    color: red;
+    pointer-events: none;
+    animation: heart-beat 1s infinite;
+}
+
+@keyframes heart-beat {
     0% {
-        background-position: 0 0;
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
     }
     100% {
-        background-position: 200px 0;
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
-.progress-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%; /* Faz o gradiente cobrir o dobro da largura da barra para criar o efeito de onda */
-    height: 100%;
-    background: linear-gradient(-45deg, rgba(255, 0, 0, 0.7) 25%, rgba(255, 0, 0, 0.9) 50%, rgba(255, 0, 0, 0.7) 75%);
-    background-size: 200px 100%;
-    animation: wave-animation 2s linear infinite; /* Animação contínua para o efeito de onda */
-}
 /* Estilo das opções de resposta na quinta seção */
 .options {
     display: flex;
