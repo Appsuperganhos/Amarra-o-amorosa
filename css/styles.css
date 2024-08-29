@@ -473,13 +473,14 @@ p {
 .continuar-button {
     background-color: #FF0000; /* Cor de fundo vermelha */
     color: white;
-    padding: 15px 40px; /* Botão mais largo e alto */
-    font-size: 1.4em; /* Tamanho da fonte ajustado */
+    padding: 20px 60px; /* Botão maior */
+    font-size: 1.6em; /* Tamanho da fonte ajustado */
     border: 3px solid #FF0000; /* Borda vermelha para mais destaque */
     border-radius: 10px; /* Aumenta o arredondamento dos cantos */
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    margin-top: 20px; /* Espaçamento superior */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    margin-top: 30px; /* Espaçamento superior */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Sombra para destaque */
 }
 
 .continuar-button:hover {
@@ -489,4 +490,24 @@ p {
 
 .continuar-button:active {
     transform: scale(0.98); /* Diminui ligeiramente o botão ao clicar */
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+}
+
+.continuar-button {
+    animation: pulse 1.5s infinite; /* Aplica a animação pulsante */
 }
