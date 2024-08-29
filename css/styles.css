@@ -363,3 +363,23 @@ p {
     opacity: 0; /* Começa invisível */
     animation: fadeIn 1s ease-out forwards; /* Aplica a animação de aparecimento */
 }
+
+/* Estilo do texto no canto superior direito */
+.info-box .top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white; /* Cor do texto */
+    font-size: 1.2em; /* Tamanho do texto */
+    font-weight: bold; /* Peso da fonte */
+}
+
+/* Estilo do texto no canto superior esquerdo */
+.info-box .top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white; /* Cor do texto */
+    font-size: 1.2em; /* Tamanho do texto */
+    font-weight: bold; /* Peso da fonte */
+}
