@@ -396,8 +396,6 @@ p {
     font-weight: bold;
 }
 
-/* Estilo da barra de progresso */
-.progress-bar-container {
 /* Estilo do retângulo com animação */
 @keyframes fadeIn {
     from {
